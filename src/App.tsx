@@ -1,10 +1,10 @@
+
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import DefaultLayout from './Layout/DefaultLayout/DefaultLayout'
 import { homeRoute, loginRoute, registerRoute } from './Routes'
 
 function App() {
-  
   return (
     <>
       <Routes>
@@ -15,7 +15,7 @@ function App() {
           </Route>
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
