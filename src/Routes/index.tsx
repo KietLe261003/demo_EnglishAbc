@@ -1,10 +1,7 @@
 import homeRoute from "./homeRoute";
-import loginRoute from "./loginRoute";
-import registerRoute from "./registerRoute";
 
-export  {
+
+export {
     homeRoute,
-    loginRoute,
-    registerRoute
 }
     
