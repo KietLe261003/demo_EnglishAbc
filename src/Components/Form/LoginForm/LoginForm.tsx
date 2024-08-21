@@ -8,7 +8,7 @@ const LoginForm = () => {
     setIsPasswordVisible(!isPasswordVisible);
   };
   return (
-    <div>
+    <div className=" flex">
       <div className=" max-h-full mt-10 ">
         {/* Auth Card Container */}
         <div className="grid place-items-center mx-2 my-20 sm:my-auto">

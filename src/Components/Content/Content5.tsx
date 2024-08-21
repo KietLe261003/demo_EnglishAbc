@@ -1,6 +1,6 @@
 const Content5 = () => {
     return (
-      <div className="bg-white  w-[584px] h-[275px]">
+      <div className="bg-white w-[584px] h-[275px]">
         <h2 className="text-2xl font-bold flex items-center text-[40px]">
           <span className="block w-[8px] h-[40px] bg-orange-400 mr-2 border rounded-md "></span>
           SIMPLE FUTURE

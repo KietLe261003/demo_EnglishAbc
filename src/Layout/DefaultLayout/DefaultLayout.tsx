@@ -1,14 +1,12 @@
-import React from "react";
 import { Outlet } from "react-router-dom";
+import Footer from "./Componets/Footer";
 
 const DefaultLayout = () => {
   return (
-    // <div className=" bg-gradient-to-b from-white to-[#EADBD7] ">
-    //   <Outlet />
-    // </div>
-    
-    <div className="">
-      <Outlet />
+    <div className="max-w-[100vw] flex flex-col items-center justify-center mx-auto">
+      header
+      <Outlet/>
+      <Footer></Footer>
     </div>
   );
 };

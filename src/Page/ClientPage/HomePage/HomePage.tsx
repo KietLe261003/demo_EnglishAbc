@@ -1,7 +1,9 @@
+import Content5 from "../../../Components/Content/Content5";
+
 const HomePage = () => {
   return (
     <div>
-      <div>HomePage</div>
+      <Content5/>
     </div>
   );
 };
