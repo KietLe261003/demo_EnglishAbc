@@ -1,4 +1,5 @@
-import LoginForm from "../Page/ClientPage/Form/LoginForm/LoginForm";
+import LoginForm from "../Components/Form/LoginForm/LoginForm"
+
 
 const  loginRoute = [
     {

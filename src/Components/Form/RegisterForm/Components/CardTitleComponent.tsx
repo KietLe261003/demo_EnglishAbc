@@ -1,4 +1,4 @@
-import bag from "../../../../../Assets/Image/chlopiec-czuta_Obszar-roboczy-1-removebg-preview (1).png";
+import bag from "../../../../Assets/Image/chlopiec-czuta_Obszar-roboczy-1-removebg-preview (1).png";
 const CardTitleComponent = () => {
   return (
     <div>

@@ -1,4 +1,5 @@
-import RegisterForm from "../Page/ClientPage/Form/RegisterForm/RegisterForm";
+import RegisterForm from "../Components/Form/RegisterForm/RegisterForm"
+
 
 const registerRoute= [
     {
