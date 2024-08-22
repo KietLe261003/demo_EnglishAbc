@@ -4,6 +4,7 @@ import { FaArrowRight } from 'react-icons/fa';
 const HomePage = () => {
   return (
     <div>
+      
       <div className="space-y-4 p-4">
       <Button variant="primary" onClick={() => alert('Primary Button Clicked!')}>Xem chi tiết</Button>
       <Button variant="secondary" onClick={() => alert('Secondary Button Clicked!')}>Secondary Button</Button>
