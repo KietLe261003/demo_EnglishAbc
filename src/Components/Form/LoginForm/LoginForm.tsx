@@ -8,18 +8,12 @@ const LoginForm = () => {
     setIsPasswordVisible(!isPasswordVisible);
   };
   return (
-    <div className=" flex">
-      <div className=" max-h-full mt-10 ">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div className="bg-white max-h-full rounded-3xl shadow-md lg:shadow-lg p-6 sm:p-10">
         {/* Auth Card Container */}
         <div className="grid place-items-center mx-2 my-20 sm:my-auto">
           {/* Auth Card */}
-          <div
-            className="
-            w-11/12 p-12 sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-4/12 
-            px-6 py-10 sm:px-10 sm:py-6 
-            bg-slate-50 rounded-3xl shadow-md lg:shadow-lg
-          "
-          >
+          <div>
             <CardTitleComponent />
 
             <form className="mt-10" method="POST">
@@ -35,11 +29,11 @@ const LoginForm = () => {
                 placeholder="Tài khoản"
                 autoComplete="account"
                 className="
-                block w-full py-3 px-1 mt-2 
-                text-gray-800 appearance-none 
-                border rounded-xl border-[#9E988F]
-                focus:text-gray-500 focus:outline-none focus:border-[#9E988F]
-              "
+                  block w-full py-3 px-1 mt-2 
+                  text-gray-800 appearance-none 
+                  border rounded-xl border-[#9E988F]
+                  focus:text-gray-500 focus:outline-none focus:border-[#9E988F]
+                "
                 required
               />
 
@@ -51,16 +45,16 @@ const LoginForm = () => {
               <div className="relative flex items-center">
                 <input
                   id="password"
-                  type={isPasswordVisible ? "text" : "password"} 
+                  type={isPasswordVisible ? "text" : "password"}
                   name="password"
                   placeholder="Mật khẩu"
                   autoComplete="current-password"
                   className="
-                    block w-full py-3 px-4 pr-10 mt-7 
-                    text-gray-800 appearance-none 
-                    border rounded-xl border-[#9E988F]
-                    focus:text-gray-500 focus:outline-none focus:border-[#9E988F]
-                    "
+                      block w-full py-3 px-4 pr-10 mt-7 
+                      text-gray-800 appearance-none 
+                      border rounded-xl border-[#9E988F]
+                      focus:text-gray-500 focus:outline-none focus:border-[#9E988F]
+                      "
                   required
                 />
                 <div
@@ -96,33 +90,36 @@ const LoginForm = () => {
               </div>
 
               <div className="relative sm:flex sm:flex-wrap mt-2 sm:mb-4 text-sm text-center">
-                <a
-                  href="#"
-                  className="absolute left-[420px] text-[#9E988F] text-sm hover:underline"
-                >
-                  Quên mật khẩu?
-                </a>
+                <div className="flex justify-end w-full">
+                  <a
+                    href="#"
+                    className="text-[#9E988F] text-sm hover:underline"
+                  >
+                    Quên mật khẩu?
+                  </a>
+                </div>
               </div>
+
               {/* Auth Button */}
               <div className="flex justify-end">
                 <button
                   type="submit"
                   className="
-                        min-w-[110px] min-h-[26px] py-2 mt-3 mx-1 bg-[#ECEBE9] rounded-3xl
-                        font-bold text-[#4F4B45] text-sm
-                        focus:outline-none hover:bg-[#bdbcba] hover:shadow-none 
-                    "
+                          min-w-[110px] min-h-[26px] py-2 mt-3 mx-1 bg-[#ECEBE9] rounded-3xl
+                          font-bold text-[#4F4B45] text-sm
+                          focus:outline-none hover:bg-[#bdbcba] hover:shadow-none 
+                      "
                 >
                   Đăng ký
                 </button>
                 <button
                   type="submit"
                   className="
-                        min-w-[110px] min-h-[26px] py-2 mt-3 bg-[#FB9400] rounded-3xl
-                        font-bold text-white text-sm
-                        focus:outline-none
-                         hover:bg-[#E07B00] hover:shadow-none shadow-lg
-                        "
+                          min-w-[110px] min-h-[26px] py-2 mt-3 bg-[#FB9400] rounded-3xl
+                          font-bold text-white text-sm
+                          focus:outline-none
+                          hover:bg-[#E07B00] hover:shadow-none shadow-lg
+                          "
                 >
                   Đăng nhập
                 </button>
