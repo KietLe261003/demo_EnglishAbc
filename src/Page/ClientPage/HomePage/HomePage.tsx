@@ -2,6 +2,7 @@ import LessonCard from "../../../Components/CardItem/LessonCard";
 
 const HomePage = () => {
   return (
+      
     <div className="flex gap-3">
       <div className="flex flex-col gap-3">
         <LessonCard
@@ -60,6 +61,7 @@ const HomePage = () => {
         />
       </div>
     </div>
+  </div>
   );
 };
 
