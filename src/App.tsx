@@ -3,7 +3,7 @@ import "./App.css";
 import DefaultLayout from "./Layout/DefaultLayout/DefaultLayout";
 import { homeRoute } from "./Routes";
 
-function App() {
+const App: React.FC = () => {
   return (
     <>
       <Routes>

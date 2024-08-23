@@ -3,18 +3,12 @@ import ButtonComponent from "./Components/ButtonComponent";
 
 const RegisterForm = () => {
   return (
-    <div>
-      <div className=" max-h-full mt-10 ">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div className="bg-white max-h-full rounded-3xl shadow-md lg:shadow-lg p-6 sm:p-10">
         {/* Auth Card Container */}
         <div className="grid place-items-center mx-2 my-20 sm:my-auto">
           {/* Auth Card */}
-          <div
-            className="
-            w-11/12 p-12 sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-4/12 
-            px-6 py-10 sm:px-10 sm:py-6 
-            bg-slate-50 rounded-3xl shadow-md lg:shadow-lg
-          "
-          >
+          <div>
             <CardTitleComponent />
             <div>
               <div className="mt-8 font-medium">Họ và tên</div>
