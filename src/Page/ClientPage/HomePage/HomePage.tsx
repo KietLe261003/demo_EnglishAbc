@@ -1,18 +1,26 @@
-import Button from "../../../Components/Button/Button";
-import { FaArrowRight } from 'react-icons/fa';
+import LessonCard from "../../../Components/CardItem/LessonCard";
+
 
 const HomePage = () => {
   return (
-    <div>
-      
-      <div className="space-y-4 p-4">
-      <Button variant="primary" onClick={() => alert('Primary Button Clicked!')}>Xem chi tiết</Button>
-      <Button variant="secondary" onClick={() => alert('Secondary Button Clicked!')}>Secondary Button</Button>
-      <Button variant="icon" icon={<FaArrowRight />} onClick={() => alert('Icon Button Clicked!')}>
-        Xem chi tiết
-      </Button>
-      <Button variant="outline" onClick={() => alert('Outline Button Clicked!')}>Outline Button</Button>
-    </div>
+    <div className="flex gap-3">
+      <div className="flex flex-col gap-3">
+        <LessonCard name="Tài Liệu" buttonContent="Xem chi tiết" description="Lorem ipsum dolor sit amet, ipsum consectetuer adipiscing elit...."/>
+        <LessonCard name="Tài Liệu" description="Lorem ipsum dolor sit amet, ipsum consectetuer adipiscing elit...."/>
+        <LessonCard name="Tài Liệu" description="Lorem ipsum dolor sit amet, ipsum consectetuer adipiscing elit...." border={true} />
+      </div>
+      <div className="flex flex-col gap-3">
+        <LessonCard name="Tài Liệu" price={20} description="Lorem ipsum dolor sit amet, ipsum consectetuer adipiscing elit...."/>
+      </div>
+      <div className="flex flex-col gap-3">
+        <LessonCard name="Tài Liệu" buttonContent="Làm bài" description="Lorem ipsum dolor sit amet, ipsum consectetuer adipiscing elit...."/>
+        <LessonCard name="Tài Liệu" buttonContent="Làm bài" state="Pass" description="Lorem ipsum dolor sit amet, ipsum consectetuer adipiscing elit...."/>
+        <LessonCard name="Tài Liệu" buttonContent="Làm bài" state="Faill" description="Lorem ipsum dolor sit amet, ipsum consectetuer adipiscing elit...."/>
+        <LessonCard name="Tài Liệu" buttonContent="Làm bài" state="Cần làm" description="Lorem ipsum dolor sit amet, ipsum consectetuer adipiscing elit...."/>
+      </div>
+      <div className="flex flex-col gap-3">
+        <LessonCard name="Tài Liệu" price={20} description="Lorem ipsum dolor sit amet, ipsum consectetuer adipiscing elit...." type={false}/>
+      </div>
     </div>
   );
 };
