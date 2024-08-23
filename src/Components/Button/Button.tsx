@@ -84,7 +84,6 @@ const Button: React.FC<ButtonProps> = ({
         return 'justify-center';
     }
   };
-
   return (
     <button
       className={`${className} ${textColorClass} ${layoutClass()}`}
