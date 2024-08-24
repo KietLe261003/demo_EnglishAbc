@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <footer className="w-full">
       <div className="flex flex-col items-center w-full">
-        <div className="max-w-[958px] mx-auto h-auto md:flex md:justify-between md:items-center py-8 px-4 md:px-0">
+        <div className="max-w-[958px]  h-auto md:flex md:justify-between md:items-center py-8 px-4 md:px-0">
           <div>
             <div className="flex items-center mb-4">
               <img
