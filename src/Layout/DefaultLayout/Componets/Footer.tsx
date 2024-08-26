@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className="w-full">
       <div className="flex flex-col items-center w-full">
-        <div className="max-w-[958px]  h-auto md:flex md:justify-between md:items-center py-8 px-4 md:px-0">
+        <div className="w-full h-auto md:flex md:justify-between md:items-center py-8 px-10">
           <div>
             <div className="flex items-center mb-4">
               <img
@@ -30,7 +30,6 @@ const Footer = () => {
               erat volutpat.
             </p>
           </div>
-
           <div className="mt-7 mr-16 flex items-start justify-start text-[16px]">
             <img src={line1} className="mt-7 ml-5" />
             <ul className="space-y-6 mt-7 pl-16  ">

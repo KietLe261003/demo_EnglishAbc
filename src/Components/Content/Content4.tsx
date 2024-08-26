@@ -1,18 +1,23 @@
 import rectangle from "../../Assets/Image/Rectangle 172.png";
 import Button from "../Button/Button";
 const Content4 = () => {
-    const handleClick = () => {
-        alert('Button clicked!');
-      };
-    return (
-      <div className="flex flex-col md:flex-row items-center bg-white pl-12 pb-12 rounded-lg max-w-[1300px] mx-auto min-h-[288px]">
+  const handleClick = () => {
+    alert("Button clicked!");
+  };
+  return (
+    <div className="flex flex-col md:flex-row items-center bg-white pl-12 pb-12 rounded-lg max-w-[1300px] mx-auto min-h-[288px]">
       <div className="mb-4 md:mb-0 md:pr-6 flex-1">
         <h2 className="text-[28px] font-bold mb-4">Làm bài kiểm tra thử</h2>
         <p className="text-gray-700 mb-4 tracking-wider text-200px">
-          G-Easy helps you check your English level from there to have a good orientation for yourself
+          G-Easy helps you check your English level from there to have a good
+          orientation for yourself
         </p>
         <div className="flex items-center justify-end">
-          <Button onClick={handleClick} bg_color="bg-transparent" variant="outline">
+          <Button
+            onClick={handleClick}
+            bg_color="bg-transparent"
+            variant="outline"
+          >
             Làm bài ngay
           </Button>
         </div>
@@ -25,8 +30,7 @@ const Content4 = () => {
         />
       </div>
     </div>
-    
-    );
-  }
+  );
+};
 
-  export default Content4;
+export default Content4;
