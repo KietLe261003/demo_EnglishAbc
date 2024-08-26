@@ -1,5 +1,5 @@
-import LessonCard from "../../../Components/CardItem/LessonCard";
 
+import LessonCard from "../../../Components/CardItem/LessonCard";
 const HomePage = () => {
   return (
     <div className="flex gap-3">
@@ -24,6 +24,12 @@ const HomePage = () => {
           name="Tài Liệu"
           price={20}
           description="Lorem ipsum dolor sit amet, ipsum consectetuer adipiscing elit...."
+        />
+        <LessonCard
+          name="Tài Liệu"
+          price={20}
+          description="Lorem ipsum dolor sit amet, ipsum consectetuer adipiscing elit...."
+          percent={30}
         />
       </div>
       <div className="flex flex-col gap-3">

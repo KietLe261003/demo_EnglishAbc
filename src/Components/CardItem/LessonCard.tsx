@@ -1,4 +1,5 @@
 import CardImage from "../../Assets/Card/Rectangle 178.svg";
+import Level from "../Level/Level";
 interface LessonCardProps {
   name: string;
   description: string;
@@ -7,6 +8,7 @@ interface LessonCardProps {
   price?: number;
   border?: boolean;
   type?: boolean;
+  percent?: number;
 }
 const LessonCard: React.FC<LessonCardProps> = ({
   name,
@@ -16,6 +18,7 @@ const LessonCard: React.FC<LessonCardProps> = ({
   state,
   border = false,
   type = true,
+  percent,
 }) => {
   let classState =
     "absolute top-[110px] right-0 rounded-bl-full rounded-tl-full px-6 py-2 ";
@@ -67,6 +70,12 @@ const LessonCard: React.FC<LessonCardProps> = ({
           alt="Placeholder Image"
           className="w-full max-h-[130px] object-cover"
         />
+        {
+          percent && <div className=" absolute top-0 left-0">
+          <Level percent={percent}></Level>
+        </div>
+        }
+
         <div className="p-[20px]">
           <div className="max-h-full mb-3">
             <div className="font-bold text-base mb-2">{name}</div>
