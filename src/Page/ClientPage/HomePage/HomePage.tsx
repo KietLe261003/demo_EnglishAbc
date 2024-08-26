@@ -1,5 +1,5 @@
-import LessonCard from "../../../Components/CardItem/LessonCard";
 
+import LessonCard from "../../../Components/CardItem/LessonCard";
 const HomePage = () => {
   return (
     <div className="flex gap-3">
