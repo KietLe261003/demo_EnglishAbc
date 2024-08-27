@@ -39,13 +39,13 @@ const Button: React.FC<ButtonProps> = ({
 
   switch (size) {
     case 'small':
-      className += 'px-4 py-2 text-sm w-[160px] h-[48px]';
+      className += 'px-4 py-2 text-sm';
       break;
     case 'large':
-      className += 'px-6 py-3 text-base w-[256px] h-[48px]';
+      className += 'px-6 py-3 text-base';
       break;
     default:
-      className += 'px-5 py-2.5 text-base w-[160px] h-[48px]'; 
+      className += 'px-5 py-2.5 text-base'; 
       break;
   }
 

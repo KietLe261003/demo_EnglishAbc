@@ -9,12 +9,8 @@ interface LevelProps {
 
 }
 
-
 const Level: React.FC<LevelProps> = ({
     percent,
-    bg_color,
-    text_color,
-    border_color
 }) => {
     return (
         <div>
