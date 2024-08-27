@@ -11,7 +11,7 @@ const DefaultLayout = () => {
       </div>
       <main className="ml-[350px] w-full">
         <Navbar /> {/* Navbar ở trên cùng */}
-        <div className="p-[40px] mt-[100px] ">
+        <div className="p-[50px] mt-[70px] ">
           <Outlet />
         </div>
         <Footer />
