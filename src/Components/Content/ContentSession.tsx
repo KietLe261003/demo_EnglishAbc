@@ -1,7 +1,7 @@
 import rectangle from "../../Assets/Image/Rectangle 172.svg";
 import Button from "../Button/Button";
 
-const Content4 = ({
+const ContentSession = ({
   title = "Làm bài kiểm tra thử",
   content = "G-Easy helps you check your English level from there to have a good orientation for yourself",
   contentButton ="Xem chi tiết"
@@ -40,4 +40,4 @@ const Content4 = ({
   );
 };
 
-export default Content4;
+export default ContentSession;
