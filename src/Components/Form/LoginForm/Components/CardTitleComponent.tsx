@@ -1,4 +1,3 @@
-import React from 'react'
 import bag from '../../../../Assets/Image/world_book_fun_fb_06 [Converted]-04 1.png'
 const CardTitleComponent = () => {
   return (
