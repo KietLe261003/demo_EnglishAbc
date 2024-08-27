@@ -1,9 +1,13 @@
-export const IconHome: React.FC=()=>{
+interface IconProps {
+  width?: string,
+  height?: string
+}
+export const IconHome: React.FC<IconProps>=({width="1.5em",height="1.5em"})=>{
     return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="1.5em"
-          height="1.5em"
+          width={width}
+          height={height}
           viewBox="0 0 24 24"
         >
           <path
@@ -17,12 +21,12 @@ export const IconHome: React.FC=()=>{
         </svg>
     );
 }
-export const IconLeaf: React.FC=()=>{
+export const IconLeaf: React.FC<IconProps>=({width="1.5em", height="1.5em"})=>{
     return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="1.5em"
-          height="1.5em"
+          width={width}
+          height={height}
           viewBox="0 0 256 256"
         >
           <path
@@ -32,12 +36,12 @@ export const IconLeaf: React.FC=()=>{
         </svg>
     );
 }
-export const IconBook: React.FC=()=>{
+export const IconBook: React.FC<IconProps>=({width="1.5em", height="1.5em"})=>{
     return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="1.5em"
-          height="1.5em"
+          width={width}
+          height={height}
           viewBox="0 0 16 16"
         >
           <path
@@ -49,12 +53,12 @@ export const IconBook: React.FC=()=>{
         </svg>
     );
 }
-export const IconVideo: React.FC=()=>{
+export const IconVideo: React.FC<IconProps>=({width="1.5em", height="1.5em"})=>{
     return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="1.5em"
-          height="1.5em"
+          width={width}
+          height={height}
           viewBox="0 0 24 24"
         >
           <path
@@ -66,12 +70,12 @@ export const IconVideo: React.FC=()=>{
         </svg>
     );
 }
-export const IconDocument: React.FC=()=>{
+export const IconDocument: React.FC<IconProps>=({width="1.5em", height="1.5em"})=>{
     return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="1.5em"
-          height="1.5em"
+          width={width}
+          height={height}
           viewBox="0 0 24 24"
         >
           <path
@@ -81,12 +85,12 @@ export const IconDocument: React.FC=()=>{
         </svg>
     );
 }
-export const IconUser: React.FC=()=>{
+export const IconUser: React.FC<IconProps>=({width="1.5em", height="1.5em"})=>{
     return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="1.5em"
-          height="1.5em"
+          width={width}
+          height={height}
           viewBox="0 0 24 24"
         >
           <path
