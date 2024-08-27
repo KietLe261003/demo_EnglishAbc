@@ -1,70 +1,29 @@
-
-import LessonCard from "../../../Components/CardItem/LessonCard";
+import BannerLarge from "../../../Components/Banner/BannerLarge";
+import ContentSession from "../../../Components/Content/ContentSession";
+import ContentHome from "./Components/ContentHome";
+import ListIconContentHome from "./Components/ListIconContentHome";
 const HomePage = () => {
   return (
-    <div className="flex gap-3">
-      <div className="flex flex-col gap-3">
-        <LessonCard
-          name="Tài Liệu"
-          buttonContent="Xem chi tiết"
-          description="Lorem ipsum dolor sit amet, ipsum consectetuer adipiscing elit...."
-        />
-        <LessonCard
-          name="Tài Liệu"
-          description="Lorem ipsum dolor sit amet, ipsum consectetuer adipiscing elit...."
-        />
-        <LessonCard
-          name="Tài Liệu"
-          description="Lorem ipsum dolor sit amet, ipsum consectetuer adipiscing elit...."
-          border={true}
-        />
-      </div>
-      <div className="flex flex-col gap-3">
-        <LessonCard
-          name="Tài Liệu"
-          price={20}
-          description="Lorem ipsum dolor sit amet, ipsum consectetuer adipiscing elit...."
-        />
-        <LessonCard
-          name="Tài Liệu"
-          price={20}
-          description="Lorem ipsum dolor sit amet, ipsum consectetuer adipiscing elit...."
-          percent={30}
-        />
-      </div>
-      <div className="flex flex-col gap-3">
-        <LessonCard
-          name="Tài Liệu"
-          buttonContent="Làm bài"
-          description="Lorem ipsum dolor sit amet, ipsum consectetuer adipiscing elit...."
-        />
-        <LessonCard
-          name="Tài Liệu"
-          buttonContent="Làm bài"
-          state="Pass"
-          description="Lorem ipsum dolor sit amet, ipsum consectetuer adipiscing elit...."
-        />
-        <LessonCard
-          name="Tài Liệu"
-          buttonContent="Làm bài"
-          state="Faill"
-          description="Lorem ipsum dolor sit amet, ipsum consectetuer adipiscing elit...."
-        />
-        <LessonCard
-          name="Tài Liệu"
-          buttonContent="Làm bài"
-          state="Cần làm"
-          description="Lorem ipsum dolor sit amet, ipsum consectetuer adipiscing elit...."
-        />
-      </div>
-      <div className="flex flex-col gap-3">
-        <LessonCard
-          name="Tài Liệu"
-          price={20}
-          description="Lorem ipsum dolor sit amet, ipsum consectetuer adipiscing elit...."
-          type={false}
-        />
-      </div>
+    <div className="flex flex-col gap-3">
+      <BannerLarge />
+      <div className="min-h-[72px] "></div>
+      <ContentSession
+        title="About"
+        content="G-Easy is a promising and growing rapidly growing educational 
+        technology startup in Vietnam. G-Easy is an English learning software 
+        from basic to advanced to help learners easily approach English. I
+        t currently has more than 13 million users in 101 countries around the world, 
+        and has offices in Portugal, Vietnam, India, Indonesia and Japan."
+      />
+      <div className="min-h-[72px] "></div>
+      <ContentHome />
+      <ListIconContentHome />
+      <div className="min-h-[72px] "></div>
+      <ContentSession
+        title="Làm bài kiểm tra thử"
+        content="G-Easy helps you check your English level from there to have a good orientation for yourself"
+        contentButton="Làm bài ngay"
+      />
     </div>
   );
 };
