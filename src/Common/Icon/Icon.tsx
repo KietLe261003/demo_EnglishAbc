@@ -180,6 +180,17 @@ export const IconSearch = ({width="1.25em",height ="1.25em"}) => {
         fill-rule="evenodd"
         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
         clip-rule="evenodd"
+export const IconWindowClose = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 24 24"
+    >
+      <path
+        fill="currentColor"
+        d="M13.46 12L19 17.54V19h-1.46L12 13.46L6.46 19H5v-1.46L10.54 12L5 6.46V5h1.46L12 10.54L17.54 5H19v1.46z"
       ></path>
     </svg>
   );
