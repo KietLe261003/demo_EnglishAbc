@@ -1,28 +1,28 @@
-import React from "react";
 import logosvg from "../../../Assets/Image/Vector 8.svg";
 import img from "../../../Assets/Image/BoyWithLaptop.svg";
 import { IconBook, IconDocument, IconHome, IconLeaf, IconUser, IconVideo } from "../../../Common/Icon/IconSlideBar";
 import { IconChat, IconSetting } from "../../../Common/Icon/Icon";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar: React.FC = () => {
   const menuItems = [
     {
       name: "Trang chủ",
-      href: "#home",
+      href: "/",
       icon: (
         <IconHome/>
       ),
     },
     {
       name: "Tài liệu miễn phí",
-      href: "#about",
+      href: "/document/free",
       icon: (
         <IconLeaf/>
       ),
     },
     {
       name: "Tài liệu trả phí",
-      href: "#contact",
+      href: "/document/pay",
       icon: (
         <IconBook/>
       ),
@@ -66,6 +66,7 @@ const Sidebar: React.FC = () => {
       ),
     },
   ];
+  const url=useLocation();
 
   return (
     <div className=" bg-orange-300 p-[40px] h-screen flex flex-col justify-between mx-auto">
@@ -86,13 +87,13 @@ const Sidebar: React.FC = () => {
         <ul>
           {menuItems.map((item, index) => (
             <li key={index} className="mb-2">
-              <a
-                href={item.href}
-                className="py-2 px-4 gap-3 text-gray-700 flex items-center hover:bg-orange-700 hover:rounded-full hover:text-white"
+              <Link
+                to={item.href}
+                className={`${item.href===url.pathname && 'bg-orange-700 text-white rounded-full'} py-2 px-4 gap-3 text-gray-700 flex items-center hover:bg-orange-700 hover:rounded-full hover:text-white`}
               >
                 <span className="mr-2 text-gray-700">{item.icon}</span>
                 {item.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

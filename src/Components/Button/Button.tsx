@@ -42,7 +42,7 @@ const Button: React.FC<ButtonProps> = ({
       className += 'px-4 py-2 text-sm';
       break;
     case 'large':
-      className += 'px-6 py-3 text-base';
+      className += 'px-8 py-3 text-base';
       break;
     default:
       className += 'px-5 py-2.5 text-base'; 
@@ -52,25 +52,25 @@ const Button: React.FC<ButtonProps> = ({
   // Apply variant-specific classes
   switch (variant) {
     case 'primary':
-      className += 'text-white bg-[#FB9400] hover:bg-[#e68a00]';
+      className += ' text-white bg-[#FB9400] hover:bg-[#e68a00]';
       break;
     case 'secondary':
-      className += 'text-gray-700 bg-gray-200 hover:bg-gray-300 disabled:bg-gray-100';
+      className += ' text-gray-700 bg-gray-200 hover:bg-gray-300 disabled:bg-gray-100';
       break;
     case 'outline':
-      className += 'text-[#FB9400] border border-[#FB9400] bg-transparent hover:bg-[#FB9400] hover:text-white disabled:border-gray-300 disabled:text-gray-300';
+      className += ' text-[#FB9400] border border-[#FB9400] bg-transparent hover:bg-[#FB9400] hover:text-white disabled:border-gray-300 disabled:text-gray-300';
       break;
     case 'icon':
-      className += 'text-gray-700 bg-transparent hover:bg-gray-200 disabled:text-gray-400';
+      className += ' text-gray-700 bg-transparent hover:bg-gray-200 disabled:text-gray-400';
       break;
     case 'border':
-      className += 'text-[#FB9400] border-2 border-[#FB9400] bg-white font-bold';
+      className += ' text-[#FB9400] border-2 border-[#FB9400] bg-white font-bold';
       break;
     default:
       break;
   }
 
-  const textColorClass = textColor ? `text-[${textColor}]` : '';
+  const textColorClass = textColor ? ` text-[${textColor}]` : '';
 
   const layoutClass = () => {
     switch (iconPosition) {

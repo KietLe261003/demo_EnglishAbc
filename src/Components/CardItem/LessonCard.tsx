@@ -39,7 +39,7 @@ const LessonCard: React.FC<LessonCardProps> = ({
   return (
     <>
       <div
-        className={`bg-white rounded-3xl border max-w-[240px] h-[268px] max-h-[268px] relative ${
+        className={`bg-white rounded-3xl border w-full max-h-[268px] relative ${
           border && "border-[#FFC700] border-[4px]"
         }`}
       >
@@ -68,10 +68,10 @@ const LessonCard: React.FC<LessonCardProps> = ({
         <img
           src={CardImage}
           alt="Placeholder Image"
-          className="w-full max-h-[130px] object-cover"
+          className="w-full max-h-[130px] object-cover rounded-t-3xl"
         />
         {
-          percent && <div className=" absolute top-0 left-0">
+          percent && <div className=" absolute top-0 left-0 w-full">
           <Level percent={percent}></Level>
         </div>
         }
