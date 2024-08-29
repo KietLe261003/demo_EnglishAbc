@@ -15,7 +15,7 @@ const Level: React.FC<LevelProps> = ({
     return (
         <div>
         {percent < 30 ? (
-          <div className="relative w-[240px] h-[138px] bg-black bg-opacity-70 p-4 rounded-t-[25px]">
+          <div className="relative w-full h-[138px] bg-black bg-opacity-70 p-4 rounded-t-[25px]">
             <div
               className="absolute bottom-0 left-0 h-2 bg-[#FF774C]"
               style={{ width: `${percent}%` }}
@@ -26,7 +26,7 @@ const Level: React.FC<LevelProps> = ({
           </div>
         ) : null}
         {percent >= 30 && percent < 70 ? (
-          <div className="relative w-[240px] h-[138px] bg-black bg-opacity-70 p-4 rounded-t-[25px]">
+          <div className="relative w-full h-[138px] bg-black bg-opacity-70 p-4 rounded-t-[25px]">
             <div
               className="absolute bottom-0 left-0 h-2 bg-[#FB9400]"
               style={{ width: `${percent}%` }}
@@ -37,7 +37,7 @@ const Level: React.FC<LevelProps> = ({
           </div>
         ) : null}
         {percent >= 70 && percent < 100 ? (
-        <div className="relative w-[240px] h-[138px] bg-black bg-opacity-70 p-4 rounded-t-[25px]">
+        <div className="relative w-full h-[138px] bg-black bg-opacity-70 p-4 rounded-t-[25px]">
           <div
             className="absolute bottom-0 left-0 h-2 bg-[#00A751]"
             style={{ width: `${percent}%` }}
@@ -49,7 +49,7 @@ const Level: React.FC<LevelProps> = ({
         
       ) : null}
         {percent == 100 ? (
-        <div className="relative w-[240px] h-[138px] bg-black bg-opacity-70 p-4 rounded-t-[25px]">
+        <div className="relative w-full h-[138px] bg-black bg-opacity-70 p-4 rounded-t-[25px]">
           <div
             className="absolute bottom-0 left-0 h-2 bg-[#00A751]"
             style={{ width: `${percent}%` }}

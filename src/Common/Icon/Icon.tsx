@@ -1,8 +1,11 @@
 interface IconProps {
-  width?: string,
-  height?: string
+  width?: string;
+  height?: string;
 }
-export const IconCart: React.FC<IconProps> = ({width="1.5em",height="1.5em"}) => {
+export const IconCart: React.FC<IconProps> = ({
+  width = "1.5em",
+  height = "1.5em",
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +21,10 @@ export const IconCart: React.FC<IconProps> = ({width="1.5em",height="1.5em"}) =>
     </svg>
   );
 };
-export const IconChat: React.FC<IconProps> = ({width="1.5em",height="1.5em"}) => {
+export const IconChat: React.FC<IconProps> = ({
+  width = "1.5em",
+  height = "1.5em",
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +44,10 @@ export const IconChat: React.FC<IconProps> = ({width="1.5em",height="1.5em"}) =>
     </svg>
   );
 };
-export const IconRing: React.FC<IconProps> = ({width="1.5em",height="1.5em"}) => {
+export const IconRing: React.FC<IconProps> = ({
+  width = "1.5em",
+  height = "1.5em",
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +72,10 @@ export const IconRing: React.FC<IconProps> = ({width="1.5em",height="1.5em"}) =>
     </svg>
   );
 };
-export const IconSetting: React.FC<IconProps> = ({width="1.5em",height="1.5em"}) => {
+export const IconSetting: React.FC<IconProps> = ({
+  width = "1.5em",
+  height = "1.5em",
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -88,39 +100,122 @@ export const IconSetting: React.FC<IconProps> = ({width="1.5em",height="1.5em"})
     </svg>
   );
 };
-export const IconArrowLeft = () => {
+export const IconArrowLeft = ({width="24px", height="24px",color="#FFFF"}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24px"
-      height="24px"
+      width={width}
+      height={height}
       viewBox="0 0 24 24"
     >
       <g fill="none" fillRule="evenodd">
         <path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
         <path
-          fill="#FFFF"
+          fill={color}
           d="M7.94 13.06a1.5 1.5 0 0 1 0-2.12l5.656-5.658a1.5 1.5 0 1 1 2.121 2.122L11.122 12l4.596 4.596a1.5 1.5 0 1 1-2.12 2.122l-5.66-5.658Z"
         />
       </g>
     </svg>
   );
 };
-export const IconArrowRight = () => {
+export const IconArrowRight = ({width="24px", height="24px",color="#FFFF"}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24px"
-      height="24px"
+      width={width}
+      height={height}
       viewBox="0 0 24 24"
     >
       <g fill="none" fillRule="evenodd">
         <path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
         <path
-          fill="#FFFF"
+          fill={color}
           d="M16.06 10.94a1.5 1.5 0 0 1 0 2.12l-5.656 5.658a1.5 1.5 0 1 1-2.121-2.122L12.879 12L8.283 7.404a1.5 1.5 0 0 1 2.12-2.122l5.658 5.657Z"
         />
       </g>
+    </svg>
+  );
+};
+export const IConEmail = () => {
+  return (
+    <svg
+      className="h-5 w-5 text-black hover:text-black"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
+      <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+    </svg>
+  );
+};
+export const IConCall = () => {
+  return (
+    <svg
+      className="h-5 w-5 text-black hover:text-gray-50"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path
+        fillRule="evenodd"
+        d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z"
+        clip-rule="evenodd"
+      />
+    </svg>
+  );
+};
+export const IconSearch = ({width="1.25em",height ="1.25em"}) => {
+  return (
+    <svg
+      aria-hidden="true"
+      className="text-orange-700 dark:text-gray-400"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+    >
+      <path
+        fill-rule="evenodd"
+        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  );
+};
+export const IconFilter = ({ width = "1.25em", height = "1.25em" }) => {
+  return (
+    <svg
+      className="flex-none text-black group-hover:text-gray-500"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      width={width}
+      height={height}
+    >
+      <path
+        fill-rule="evenodd"
+        d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z"
+        clip-rule="evenodd"
+      />
+    </svg>
+  );
+};
+export const IconTriagle = ({ width = "1.25em", height = "1.25em" }) => {
+  return (
+    <svg
+      className="text-orange-700"
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      viewBox="0 0 12 12"
+    >
+      <path
+        fill="currentColor"
+        d="M5.214 10.541a.903.903 0 0 0 1.572 0l4.092-7.169C11.226 2.762 10.789 2 10.09 2H1.91c-.698 0-1.135.762-.787 1.372z"
+      />
     </svg>
   );
 };
