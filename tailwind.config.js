@@ -13,6 +13,9 @@ export default {
         },
         slate: {
           400: "#F3F3F3",
+        },
+        gray: {
+          300: "#ECEBE9"
         }
       }
     },

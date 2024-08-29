@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { IconArrowLeft, IconArrowRight } from '../../Common/Icon/Icon';
 
 const CalendarComponent: React.FC = () => {
     const [currentYear, setCurrentYear] = useState<number>(new Date().getFullYear());
@@ -19,26 +20,34 @@ const CalendarComponent: React.FC = () => {
 
         const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         const weeks = daysOfWeek.map((day, index) => (
-            <div key={index} className="text-center font-semibold">{day}</div>
+            <div key={index} className="text-center font-bold text-[24px] text-[#4F4B45]">{day}</div>
         ));
 
         const emptyDays = Array.from({ length: firstDayOfWeek }, (_, index) => (
             <div key={`empty-${index}`} />
         ));
-
+        const chosseDay =[5,10,15,20,25];
         const days = Array.from({ length: daysInMonth }, (_, index) => {
             const day = index + 1;
             const today = new Date();
             const isToday = year === today.getFullYear() && month === today.getMonth() && day === today.getDate();
 
             return (
-                <div
-                    key={day}
-                    className={`text-center py-2 border cursor-pointer ${isToday ? 'bg-blue-500 text-white' : ''}`}
-                    onClick={() => handleDayClick(day)}
-                >
+              <div
+                key={day}
+                className="text-center rounded-full py-3 text-[16px] font-bold cursor-pointer"
+                onClick={() => handleDayClick(day)}
+              >
+                {isToday === true ? (
+                  <span className="bg-orange-700 p-3 text-[16px] rounded-full text-white">
                     {day}
-                </div>
+                  </span>
+                ) : chosseDay.find((item) => item === day) !== undefined ? (
+                  <span className=' border-b-[3px] border-orange-700'>{day}</span>
+                ) : (
+                  <span>{day}</span>
+                )}
+              </div>
             );
         });
 
@@ -79,11 +88,11 @@ const CalendarComponent: React.FC = () => {
     return (
         <div className="bg-gray-100 flex items-center justify-center">
             <div className="lg:w-7/12 md:w-9/12 sm:w-10/12 mx-auto p-4">
-                <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-                    <div className="flex items-center justify-between px-6 py-3 bg-gray-700">
-                        <button onClick={handlePrevMonth} className="text-white">Previous</button>
-                        <h2 className="text-white">{`${new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(new Date(currentYear, currentMonth))}`}</h2>
-                        <button onClick={handleNextMonth} className="text-white">Next</button>
+                <div className="bg-white shadow-lg rounded-3xl overflow-hidden">
+                    <div className="flex items-center justify-between px-6 py-3 ">
+                        <button onClick={handlePrevMonth} className="text-black bg-gray-300 p-3 rounded-full"><IconArrowLeft color='black'/></button>
+                        <h2 className="text-black text-[24px] font-bold">{`${new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(new Date(currentYear, currentMonth))}`}</h2>
+                        <button onClick={handleNextMonth} className="text-black bg-gray-300 p-3 rounded-full"><IconArrowRight color='black'/></button>
                     </div>
                     <div className="grid grid-cols-7 gap-2 p-4">
                         {calendarDays}
