@@ -7,11 +7,7 @@ const CalendarComponent: React.FC = () => {
     const [calendarDays, setCalendarDays] = useState<JSX.Element[]>([]);
     const [modalVisible, setModalVisible] = useState<boolean>(false);
     const [selectedDate, setSelectedDate] = useState<string>('');
-
-    useEffect(() => {
-        generateCalendar(currentYear, currentMonth);
-    }, [currentYear, currentMonth]);
-
+    const chosseDay =[5,10,15,20,25];  //Call api in future
     const generateCalendar = (year: number, month: number) => {
         const firstDayOfMonth = new Date(year, month, 1);
         const daysInMonth = new Date(year, month + 1, 0).getDate();
@@ -26,7 +22,7 @@ const CalendarComponent: React.FC = () => {
         const emptyDays = Array.from({ length: firstDayOfWeek }, (_, index) => (
             <div key={`empty-${index}`} />
         ));
-        const chosseDay =[5,10,15,20,25];
+        
         const days = Array.from({ length: daysInMonth }, (_, index) => {
             const day = index + 1;
             const today = new Date();
@@ -84,10 +80,12 @@ const CalendarComponent: React.FC = () => {
     const handleCloseModal = () => {
         setModalVisible(false);
     };
-
+    useEffect(() => {
+        generateCalendar(currentYear, currentMonth);
+    }, [currentYear, currentMonth]);
     return (
         <div className="bg-gray-100 flex items-center justify-center">
-            <div className="lg:w-7/12 md:w-9/12 sm:w-10/12 mx-auto p-4">
+            <div className="mx-auto p-4">
                 <div className="bg-white shadow-lg rounded-3xl overflow-hidden">
                     <div className="flex items-center justify-between px-6 py-3 ">
                         <button onClick={handlePrevMonth} className="text-black bg-gray-300 p-3 rounded-full"><IconArrowLeft color='black'/></button>
