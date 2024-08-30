@@ -2,29 +2,87 @@ import React, { useState } from "react";
 import { IconFilter, IconSearch } from "../../Common/Icon/Icon";
 import Button from "../Button/Button";
 import Dropdown from "../Button/Dropdown";
-const filterType = ["Miễn phí", "Trả phí"];
-
-const filterFinal = [
-  "10%",
-  "20%",
-  "30%",
-  "40%",
-  "50%",
-  "60%",
-  "70%",
-  "80%",
-  "90%",
-  "100%",
+const filterType = [
+  {
+    key: "Miễn phí",
+    value: "Free"
+  },
+  {
+    key: "Trả phí",
+    value: "Pay"
+  }
 ];
-const filterTeacher = ["Công nghệ thông tin", "Tiếng anh"];
-
-const filterStatus = ["Đầy đủ", "Chưa đầy đủ"];
-
+const filterFinal = [
+  {
+    key: "10%",
+    value: "10"
+  },
+  {
+    key: "20%",
+    value: "20"
+  },
+  {
+    key: "30%",
+    value: "30"
+  },
+  {
+    key: "40%",
+    value: "40"
+  },
+  {
+    key: "50%",
+    value: "50"
+  },
+  {
+    key: "60%",
+    value: "60"
+  },
+  {
+    key: "70%",
+    value: "70"
+  },
+  {
+    key: "80%",
+    value: "80"
+  },
+  {
+    key: "90%",
+    value: "90"
+  },
+  {
+    key: "100%",
+    value: "100"
+  },
+];
+const filterTeacher = [
+  {
+    key: "Công nghệ thông tin",
+    value: "cntt"
+  }, 
+  {
+    key: "Tiếng anh",
+    value: "english"
+  }
+];
+const filterStatus = [
+  {
+    key: "Đầy đủ",
+    value: "Final"
+  },
+  {
+    key: "Đang hoàn thiện",
+    value: "InProgress"
+  }
+];
 interface FillterProps {
   checkAll: boolean,
-  setCheckAll: React.Dispatch<React.SetStateAction<boolean>>;
+  setCheckAll: React.Dispatch<React.SetStateAction<boolean>>,
+  setFilterType?: React.Dispatch<React.SetStateAction<string>>,
+  setFilterInProgess?: React.Dispatch<React.SetStateAction<string>>,
+  setFilterTeacher?: React.Dispatch<React.SetStateAction<string>>,
+  setFilterStatus?: React.Dispatch<React.SetStateAction<string>>,
 }
-const Fillter:React.FC<FillterProps> =({checkAll,setCheckAll})=> {
+const Fillter:React.FC<FillterProps> =({checkAll,setCheckAll,setFilterType,setFilterInProgess,setFilterTeacher,setFilterStatus})=> {
   const [openFilter,setOpenFilter]=useState<boolean>(false);
   const clickCheckAll=()=>{
     setCheckAll(true);
@@ -72,10 +130,10 @@ const Fillter:React.FC<FillterProps> =({checkAll,setCheckAll})=> {
       </div>
       <div className={`mt-[30px] ${openFilter===false && 'hidden'}`} id="disclosure-1">
         <div className="max-w-5xl flex gap-[40px]">
-          <Dropdown title="Loại tài liệu" options={filterType}></Dropdown>
-          <Dropdown title="Tiến độ hoàn thành" options={filterFinal}></Dropdown>
-          <Dropdown title="Giảng viên" options={filterTeacher}></Dropdown>
-          <Dropdown title="Trạng thái" options={filterStatus}></Dropdown>
+          <Dropdown title="Loại tài liệu" data={filterType} onChange={setFilterType}></Dropdown>
+          <Dropdown title="Tiến độ hoàn thành" data={filterFinal} onChange={setFilterInProgess}></Dropdown>
+          <Dropdown title="Giảng viên" data={filterTeacher} onChange={setFilterTeacher}></Dropdown>
+          <Dropdown title="Trạng thái" data={filterStatus} onChange={setFilterStatus}></Dropdown>
         </div>
       </div>
     </div>
