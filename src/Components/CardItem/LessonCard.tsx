@@ -26,7 +26,7 @@ const LessonCard: React.FC<LessonCardProps> = ({
     case "Pass":
       classState += "bg-[#00A751]";
       break;
-    case "Faill":
+    case "Fail":
       classState += "bg-[#FF774C]";
       break;
     case "Cần làm":
