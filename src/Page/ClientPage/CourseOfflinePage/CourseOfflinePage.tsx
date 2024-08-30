@@ -1,9 +1,9 @@
-import { useState } from "react";
-import BannerMedium from "../../../Components/Banner/BannerMedium";
-import Fillter from "../../../Components/Filter/Fillter";
-import ListDocument from "../../../Components/List/ListDocument";
+import { useState } from 'react';
+import BannerMedium from '../../../Components/Banner/BannerMedium';
+import Fillter from '../../../Components/Filter/Fillter';
+import ListDocument from '../../../Components/List/ListDocument';
 
-function DocumentPayPage() {
+function CourseOfflinePage() {
   const [checkAll, setCheckAll] = useState<boolean>(true);
   const listDocument = [
     {
@@ -12,7 +12,7 @@ function DocumentPayPage() {
       buttonContent: "Xem chi tiết",
       percent: 10,
       price: 40,
-      type: "documentpay"
+      type: "course"
     },
     {
       name: "Present continuous",
@@ -20,7 +20,7 @@ function DocumentPayPage() {
       buttonContent: "Xem chi tiết",
       percent: 30,
       price: 40,
-      type: "documentpay"
+      type: "course"
     },
     {
       name: "Present perfect",
@@ -28,7 +28,7 @@ function DocumentPayPage() {
       buttonContent: "Xem chi tiết",
       percent: 50,
       price: 20,
-      type: "documentpay"
+      type: "course"
     },
     {
       name: "Past simple",
@@ -36,7 +36,7 @@ function DocumentPayPage() {
       buttonContent: "Xem chi tiết",
       percent: 70,
       price: 40,
-      type: "documentpay"
+      type: "course"
     },
     {
       name: "Past continuous",
@@ -44,59 +44,59 @@ function DocumentPayPage() {
       buttonContent: "Xem chi tiết",
       percent: 100,
       price: 40,
-      type: "documentpay"
+      type: "course"
     },
     {
       name: "Past perfect",
       description: "Thì quá khứ hoàn thành",
       buttonContent: "Xem chi tiết",
       price: 40,
-      type: "documentpay"
+      type: "course"
     },
     {
       name: "Future simple",
       description: "Thì tương lai đơn",
       buttonContent: "Xem chi tiết",
       price: 40,
-      type: "documentpay"
+      type: "course"
     },
     {
       name: "Future continuous",
       description: "Thì tương lai hoàn thành",
       buttonContent: "Xem chi tiết",
       price: 40,
-      type: "documentpay"
+      type: "course"
     },
     {
       name: "Nouns",
       description: "Danh từ",
       buttonContent: "Xem chi tiết",
       price: 40,
-      type: "documentpay"
+      type: "course"
     },
     {
       name: "Verbs",
       description: "Động từ",
       buttonContent: "Xem chi tiết",
       price: 40,
-      type: "documentpay"
+      type: "course"
     },
   ];
-  const [filterType, setFilterType] = useState<string>("");
-  const [filterInProgess, setFilterInProgess] = useState<string>("");
-  const [filterTeacher, setFilterTeacher] = useState<string>("");
-  const [filterStatus, setFilterStatus] = useState<string>("");
+  const [filterType, setFilterType] = useState<string>('');
+  const [filterInProgess, setFilterInProgess] = useState<string>('');
+  const [filterTeacher, setFilterTeacher] = useState<string>('');
+  const [filterStatus, setFilterStatus] = useState<string>('');
   console.log(filterType); //Lọc dữ liệu loại tài liệu
   console.log(filterInProgess); //Lọc dữ liệu tiến độ hoàn thành
   console.log(filterTeacher); //Lọc dữ liệu giáo viên
   console.log(filterStatus); //Lọc dữ liệu trạng thái
   return (
-    <div className="flex flex-col gap-3">
+    <div className='flex flex-col gap-3'>
       <BannerMedium
-        title="Tài liệu trả phí"
-        description="Bộ tài liệu trả phí"
+        title='Khóa học offline'
+        description='Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. '
       />
-      <div className="min-h-[45px]"></div>
+      <div className='min-h-[45px]'></div>
       <Fillter
         checkAll={checkAll}
         setCheckAll={setCheckAll}
@@ -104,12 +104,13 @@ function DocumentPayPage() {
         setFilterTeacher={setFilterTeacher}
         setFilterInProgess={setFilterInProgess}
         setFilterStatus={setFilterStatus}
-        contentFilterAll="Tài liệu mới"
+        contentFilterAll='Tất cả khóa học'
+        contentFilterInProgess='Đã thanh toán'
       ></Fillter>
-      <div className="min-h-[45px]"></div>
+      <div className='min-h-[45px]'></div>
       <ListDocument checkAll={checkAll} listData={listDocument}></ListDocument>
     </div>
   );
 }
 
-export default DocumentPayPage;
+export default CourseOfflinePage;

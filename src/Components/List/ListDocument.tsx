@@ -8,8 +8,10 @@ interface ListDocumentObject {
     name: string,
     description: string,
     buttonContent?: string,
-    percent?: number,
-    price?: number
+    percent?: number, //nếu ở khóa học và tài liệu thì nó  tiến độ làm còn nếu là bài thi thì là điểm số
+    price?: number,
+    type?: string,
+    state?: string
 }
 const ListDocument:React.FC<ListDocumentProps>=({checkAll,listData})=> {
     const listDocumentTmp: ListDocumentObject[] = useMemo(
@@ -29,10 +31,17 @@ const ListDocument:React.FC<ListDocumentProps>=({checkAll,listData})=> {
         <div className=" grid grid-cols-4 gap-y-6 gap-x-5 justify-items-center">
             {
                 listDocument.map((item,index)=>(
-                    item.price && item.percent || !item.price ?
+                    item.percent && item.type!=="exam"? 
                     <LessonCard key={index} name={item.name} description={item.description} buttonContent={item.buttonContent} percent={item.percent}/>:
-                    <LessonCard key={index} name={item.name} description={item.description} percent={item.percent} price={item.price}/>
+                    item.type==="course" ?
+                    <LessonCard key={index} name={item.name} description={item.description} percent={item.percent} price={item.price} type={true}/>:
+                    item.type==="documentpay" ?
+                    <LessonCard key={index} name={item.name} description={item.description} percent={item.percent} price={item.price} type={false}/>:
+                    item.type==="exam" ?
+                    <LessonCard key={index} name={item.name} description={item.description} buttonContent={item.buttonContent} state={item.state}/>:
+                    <LessonCard key={index} name={item.name} description={item.description} buttonContent={item.buttonContent} percent={item.percent}/>
                 ))
+                
             }
         </div>
      );

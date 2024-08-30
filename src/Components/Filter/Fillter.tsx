@@ -81,8 +81,10 @@ interface FillterProps {
   setFilterInProgess?: React.Dispatch<React.SetStateAction<string>>,
   setFilterTeacher?: React.Dispatch<React.SetStateAction<string>>,
   setFilterStatus?: React.Dispatch<React.SetStateAction<string>>,
+  contentFilterAll?: string,
+  contentFilterInProgess?: string
 }
-const Fillter:React.FC<FillterProps> =({checkAll,setCheckAll,setFilterType,setFilterInProgess,setFilterTeacher,setFilterStatus})=> {
+const Fillter:React.FC<FillterProps> =({checkAll,setCheckAll,setFilterType,setFilterInProgess,setFilterTeacher,setFilterStatus,contentFilterAll="Tất cả tài liệu",contentFilterInProgess="Tài liệu đang học"})=> {
   const [openFilter,setOpenFilter]=useState<boolean>(false);
   const clickCheckAll=()=>{
     setCheckAll(true);
@@ -97,10 +99,10 @@ const Fillter:React.FC<FillterProps> =({checkAll,setCheckAll,setFilterType,setFi
     <div>
       <div className="flex gap-3 font-bold">
         <Button variant={checkAll===true ? "primary": "secondary"}  onClick={clickCheckAll}  size="large">
-          Tất cả tài liệu
+          {contentFilterAll}
         </Button>
         <Button variant={checkAll===false ? "primary": "secondary"} onClick={clickNotCheckAll} textColor="#FFFFFF" size="large">
-          Tài liệu đang học
+          {contentFilterInProgess}
         </Button>
         <button
           type="button"
