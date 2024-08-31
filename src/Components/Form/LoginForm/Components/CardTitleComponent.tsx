@@ -1,5 +1,4 @@
-import bag from "../../../../Assets/Image/world_book_fun_fb_06 [Converted]-04 1.png";
-
+import bag from '../../../../Assets/Image/world_book_fun_fb_06 [Converted]-04 1.png'
 const CardTitleComponent = () => {
   return (
     <div>

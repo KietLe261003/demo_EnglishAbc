@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import clsx from 'clsx';
+import clsx from "clsx";
 
 interface CheckButtonProps {
     data: { label: string; key: string }[];

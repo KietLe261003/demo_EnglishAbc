@@ -165,6 +165,25 @@ export const IConCall = () => {
     </svg>
   );
 };
+export const IconSearch = ({width="1.25em",height ="1.25em"}) => {
+  return (
+    <svg
+      aria-hidden="true"
+      className="text-orange-700 dark:text-gray-400"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+    >
+      <path
+        fillRule="evenodd"
+        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  );
+};
 export const IconWindowClose = () => {
   return (
     <svg
@@ -177,6 +196,41 @@ export const IconWindowClose = () => {
         fill="currentColor"
         d="M13.46 12L19 17.54V19h-1.46L12 13.46L6.46 19H5v-1.46L10.54 12L5 6.46V5h1.46L12 10.54L17.54 5H19v1.46z"
       ></path>
+    </svg>
+  );
+};
+export const IconFilter = ({ width = "1.25em", height = "1.25em" }) => {
+  return (
+    <svg
+      className="flex-none text-black group-hover:text-gray-500"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      width={width}
+      height={height}
+    >
+      <path
+        fillRule="evenodd"
+        d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z"
+        clip-rule="evenodd"
+      />
+    </svg>
+  );
+};
+export const IconTriagle = ({ width = "1.25em", height = "1.25em" }) => {
+  return (
+    <svg
+      className="text-orange-700"
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      viewBox="0 0 12 12"
+    >
+      <path
+        fill="currentColor"
+        d="M5.214 10.541a.903.903 0 0 0 1.572 0l4.092-7.169C11.226 2.762 10.789 2 10.09 2H1.91c-.698 0-1.135.762-.787 1.372z"
+      />
     </svg>
   );
 };
