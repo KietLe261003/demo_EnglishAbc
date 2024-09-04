@@ -17,6 +17,10 @@ export default {
         gray: {
           300: "#ECEBE9"
         }
+        ,
+        grey: {
+          10: "#F9F9F9"
+        }
       }
     },
   },

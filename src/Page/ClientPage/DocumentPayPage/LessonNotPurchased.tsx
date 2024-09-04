@@ -6,7 +6,7 @@ function LessonNotPurchased() {
       {/* Left section - Product */}
       <div className=''>
         <section className='bg-white dark:bg-gray-900'>
-          <div className=' bg-[#F9F9F9] container px-6 py-10 mx-auto'>
+          <div className=' container px-6 py-10 mx-auto'>
             <div className=''>
               <ListProduct />
             </div>
