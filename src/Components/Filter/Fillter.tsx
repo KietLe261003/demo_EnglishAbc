@@ -113,7 +113,7 @@ const Fillter:React.FC<FillterProps> =({checkAll,setCheckAll,setFilterType,setFi
         >
           <IconFilter width="1.75em" height="1.75em" />
         </button>
-        <div className="flex items-center flex-grow">
+         <div className="flex items-center flex-grow">
           <label htmlFor="voice-search" className="sr-only">
             Search
           </label>
