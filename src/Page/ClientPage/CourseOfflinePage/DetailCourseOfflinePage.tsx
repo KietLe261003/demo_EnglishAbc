@@ -23,13 +23,13 @@ function DetailCourseOfflinePage() {
         <div className='flex justify-end gap-2'>
           <ButtonDetail
             variant='secondary'
-            width="150px"
+            isSmall={true}
           >
             Khóa học khác
           </ButtonDetail>
           <ButtonDetail
             variant='primary'
-            width="150px"
+            isSmall={true}
           >
             Đăng ký ngay
           </ButtonDetail>

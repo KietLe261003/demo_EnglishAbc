@@ -5,7 +5,7 @@ interface ButtonProps {
   disabled?: boolean;
   variant?: 'primary' | 'secondary' | 'outline' | 'icon' | 'border';
   bg_color?: string;
-  width?: string;
+  isSmall?: boolean;
 }
 
 const ButtonDetail: React.FC<ButtonProps> = ({
@@ -14,7 +14,7 @@ const ButtonDetail: React.FC<ButtonProps> = ({
   disabled,
   variant = 'primary',
   bg_color,
-  width='400px'
+  isSmall=false
 }) => {
   let className = `flex items-center justify-center rounded-full  ${ bg_color || 'bg-[#FB9400]'} `;
   // Apply variant-specific classes
@@ -29,9 +29,20 @@ const ButtonDetail: React.FC<ButtonProps> = ({
     default:
       break;
   }
+  switch (isSmall) {
+    case true:
+      className+=' w-[150px]'
+      break;
+    case false:
+      className+=' w-[300px] 3xl:w-[400px]'
+      break;
+    default:
+      break;
+  }
+
 
   return (
-    <button className={`${className} w-[300px] max-w-[400px] py-4 text-lg font-medium 3xl:w-[${width}]`} onClick={onClick} disabled={disabled}>
+    <button className={`${className} max-w-[400px] py-4 text-lg font-medium`} onClick={onClick} disabled={disabled}>
       <span className='flex-1 text-center'>{children}</span>
     </button>
   );
