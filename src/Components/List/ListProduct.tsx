@@ -65,7 +65,6 @@ const ListProduct = () => {
 
       <div className='ml-4'>
         <div className='relative'>
-          {/* Video với background đổi màu và giảm opacity khi được chọn */}
           <div
             className={`w-full max-w-[600px] h-auto rounded-xl ${
               selectedCard ? 'bg-black' : 'bg-white'
