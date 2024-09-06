@@ -8,7 +8,7 @@ interface ProfileCardProps {
 }
 const ProfileCard:React.FC<ProfileCardProps> = ({name="Quốc trung", description= "Học ngu các kiểu", role= "teacher",avatar="https://scholar.googleusercontent.com/citations?view_op=view_photo&user=yQ-kKmUAAAAJ&citpid=1"}) => {
   return (
-    <div className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-2xl max-w-[430px] bg-slate-300 text-center shadow">
+    <div className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-2xl w-full max-w-[430px] bg-slate-50 text-center shadow">
       <div className="flex flex-1 flex-col p-8">
         <img
           className="mx-auto h-32 w-32 flex-shrink-0 rounded-full"

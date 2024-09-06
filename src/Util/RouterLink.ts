@@ -6,5 +6,6 @@ export enum RouterLink {
     Exam="/exam",
     Profile="/profile",
     Setting="/setting",
-    Chat="/chat"
+    Chat="/chat",
+    DetailCourseOffline="/course/offline/:id",
 }

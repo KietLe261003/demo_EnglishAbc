@@ -17,6 +17,9 @@ export default {
         gray: {
           300: "#ECEBE9"
         }
+      },
+      screens: {
+        '3xl': '2000px'
       }
     },
   },

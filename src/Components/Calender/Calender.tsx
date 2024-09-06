@@ -84,17 +84,15 @@ const CalendarComponent: React.FC = () => {
         generateCalendar(currentYear, currentMonth);
     }, [currentYear, currentMonth]);
     return (
-        <div className="bg-gray-100 flex items-center justify-center">
-            <div className="mx-auto p-4">
-                <div className="bg-white shadow-lg rounded-3xl overflow-hidden">
-                    <div className="flex items-center justify-between px-6 py-3 ">
-                        <button onClick={handlePrevMonth} className="text-black bg-gray-300 p-3 rounded-full"><IconArrowLeft color='black'/></button>
-                        <h2 className="text-black text-[24px] font-bold">{`${new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(new Date(currentYear, currentMonth))}`}</h2>
-                        <button onClick={handleNextMonth} className="text-black bg-gray-300 p-3 rounded-full"><IconArrowRight color='black'/></button>
-                    </div>
-                    <div className="grid grid-cols-7 gap-2 p-4">
-                        {calendarDays}
-                    </div>
+        <>
+            <div className="bg-slate-50 shadow-lg rounded-3xl overflow-hidden w-full">
+                <div className="flex items-center justify-between px-6 py-3 ">
+                    <button onClick={handlePrevMonth} className="text-black bg-gray-300 p-3 rounded-full"><IconArrowLeft color='black'/></button>
+                    <h2 className="text-black text-[24px] font-bold">{`${new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(new Date(currentYear, currentMonth))}`}</h2>
+                    <button onClick={handleNextMonth} className="text-black bg-gray-300 p-3 rounded-full"><IconArrowRight color='black'/></button>
+                </div>
+                <div className="grid grid-cols-7 gap-2 p-4">
+                    {calendarDays}
                 </div>
             </div>
             {modalVisible && (
@@ -116,7 +114,7 @@ const CalendarComponent: React.FC = () => {
                     </div>
                 </div>
             )}
-        </div>
+        </>
     );
 };
 
