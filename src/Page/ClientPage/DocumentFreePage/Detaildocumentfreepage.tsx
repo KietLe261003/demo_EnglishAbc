@@ -19,7 +19,7 @@ const Detaidocumentfreepage = () => {
                     onClick={handleClick}      
                     size="large" 
                     variant="secondary"
-            >{"Tài liệu miễn phí"}
+            >Tài liệu miễn phí
             </Button>
             <FaChevronRight />
             <Button
@@ -27,13 +27,13 @@ const Detaidocumentfreepage = () => {
                  variant="primary"
                  size="large"
             >
-               {"Past continuous"}
+               Past continuous
             </Button>
             </div>
             <div>
                 <h2 className="text-xl font-bold mb-4">PHẦN 1:</h2>
                 <div className="mb-6">
-                    <p className="">
+                    <p>
                     The past continuous is made from the past tense of the verb be and the
                     –ing form of a verb
                     </p>
@@ -52,7 +52,7 @@ const Detaidocumentfreepage = () => {
             </div>
             <div>
                 <h2 className="text-xl font-bold mb-4">PHẦN 2: We use the past continuous to talk about the past</h2>
-                <div className="">
+                <div>
                     <ul className="list-disc list-inside ml-4 mt-2">
                         <li>For something which happened before and after another action</li>
                         <li>For something that happened before and after a specific time</li>
@@ -60,7 +60,7 @@ const Detaidocumentfreepage = () => {
                         <li>For something that happened again and again</li>
                         <li>With verbs which show change or growth</li>
                     </ul>
-                    <p className="">
+                    <p>
                     We do not normally use the past continuous with stative verbs. We use the past simple instead
                     </p>
                 </div>
@@ -71,11 +71,11 @@ const Detaidocumentfreepage = () => {
                 <ul className="list-disc list-inside ml-4 mt-2">
                     <li>The children were doing their homework when I got home.</li>
                 </ul>
-                    <p className="">Compare: The children did their homework when (= after) I got home.</p>
+                    <p>Compare: The children did their homework when (= after) I got home.</p>
                 <ul className="list-disc list-inside ml-4">
                     <li>It was eight o'clock. I was writing a letter.</li>
                 </ul>
-                    <p className="">Compare: At eight o'clock I wrote (= started writing) some letters.</p>
+                    <p>Compare: At eight o'clock I wrote (= started writing) some letters.</p>
                 <ul className="list-disc list-inside ml-4">
                     <li>Everyone was shouting.</li>
                     <li>I was practising every day, three times a day.</li>
@@ -90,7 +90,7 @@ const Detaidocumentfreepage = () => {
             <div>
                 <h2 className="text-xl font-bold mb-4">PHẦN 4: Past continuous and past simple</h2>
                 <div>
-                    <p className="">
+                    <p>
                     The past continuous and the past simple help us to show how two past actions or situations are connected.
                     </p>
                     <ul className="list-disc list-inside ml-4">
@@ -99,7 +99,7 @@ const Detaidocumentfreepage = () => {
                         </li>
                         <li>While I was studying, I suddenly felt sleepy.</li>
                     </ul>
-                    <p className="">
+                    <p>
                         We often use these tenses to show an action interrupting another action.
                     </p>
                     <ul className="list-disc list-inside ml-4">
@@ -107,14 +107,14 @@ const Detaidocumentfreepage = () => {
                         <li>As I was going to work, I saw an old friend.</li>
                         <li>We were watching television when the power went off.</li>
                     </ul>
-                    <p className="">
+                    <p>
                     Can you see a difference in the meaning of these two sentences?
                     </p>
                     <ul className="list-disc list-inside ml-4">
                         <li>When the guests arrived, Jane was cooking dinner.</li>
                         <li>When the guests arrived, Jane cooked dinner.</li>
                     </ul>
-                    <p className="">
+                    <p>
                         In the first one, Jane started cooking dinner before the guests arrived. We know that because it uses the past continuous. In the second sentence, the guests arrived first and then Jane started cooking.
                     </p>
                 </div>
@@ -126,20 +126,20 @@ const Detaidocumentfreepage = () => {
                     variant="secondary"
                     leftIcon= {<BsDownload />
                     }
-                >{"Download"}
+                >Download
                 </Button>
                 <div className="flex items-center gap-x-6">
                     <Button
                         onClick={handleClick}      
                         size="large" 
                         variant="secondary"
-                        >{"Chọn tài liệu khác"}
+                        >Chọn tài liệu khác
                     </Button>
                     <Button
                         onClick={handleClick}      
                         size="large" 
                         variant="primary"
-                    >{"Làm bài kiểm tra"}
+                    >Làm bài kiểm tra
                     </Button>
                 </div>
             </div>  
