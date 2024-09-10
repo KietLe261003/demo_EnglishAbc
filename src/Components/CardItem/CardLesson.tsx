@@ -25,7 +25,7 @@ const CardLesson = () => {
       </div>
 
       <div className='absolute inset-0 bg-slate-950 bg-opacity-50 flex items-center justify-center rounded-xl'>
-        <img src={button_cart} alt='Cart Icon' className='w-12 h-12 ' />
+        <img src={button_cart} alt='Cart Icon' className='w-12 h-12 ml-5  hover:scale-105 cursor-pointer transition-transform duration-300' /> 
       </div>
     </div>
   );

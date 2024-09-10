@@ -5,11 +5,13 @@ import CardLesson from '../CardItem/CardLesson';
 import Button from '../Button/Button';
 import { IconArrowRight } from '../../Common/Icon/Icon';
 import { useState } from 'react';
-import cart from '../../Assets/Image/Button_cart.svg'
+import cart from '../../Assets/Image/Button_cart.svg';
 
 const ListProduct = () => {
-  const [selectedCard, setSelectedCard] = useState<string | number | null>(null);
-  const handleCardClick = (cardId :  string | number) => {
+  const [selectedCard, setSelectedCard] = useState<string | number | null>(
+    null,
+  );
+  const handleCardClick = (cardId: string | number) => {
     // if (selectedCard === cardId) {
     //   setSelectedCard(null);
     // } else {
@@ -20,7 +22,7 @@ const ListProduct = () => {
   return (
     <div className='flex items-start'>
       <div className='flex-1'>
-        <div className='bg-[#F9F9F9] container mx-auto py-4 flex justify-center h-screen'>
+        <div className='bg-gray-100 container mx-auto py-10 flex justify-center h-screen'>
           <div className='w-96 h-full flex flex-col'>
             <div
               className='w-full h-full overflow-auto shadow rounded-xl bg-white'
@@ -83,9 +85,9 @@ const ListProduct = () => {
           {selectedCard && (
             <div className='absolute inset-0 flex items-center justify-center'>
               <img
-                src={cart} 
+                src={cart}
                 alt='Cart Icon'
-                className='w-20 h-20 hover: cursor-pointer'
+                className='w-20 h-20 hover:scale-105 cursor-pointer transition-transform duration-300'
               />
             </div>
           )}

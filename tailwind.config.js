@@ -19,7 +19,7 @@ export default {
         }
         ,
         grey: {
-          10: "#F9F9F9"
+          100: "#f9f9f9"
         }
       }
     },
