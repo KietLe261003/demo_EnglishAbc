@@ -19,10 +19,10 @@ function ContentRoadMap() {
     },
   ]
   return (
-    <div className='flex flex-col justify-start text-base text-gray-600 dark:text-gray-400'>
+    <div className='flex flex-col justify-start text-base text-gray-600 dark:text-gray-400 list-none'>
       {
         RoadMap.map((item,index)=>(
-          <ItemRoadMap key={index} step={item.step} content={item.content} descript={item.descript}></ItemRoadMap>
+          <ItemRoadMap key={index} content={item.content} descript={item.descript}></ItemRoadMap>
         ))
       }
     </div>
