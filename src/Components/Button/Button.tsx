@@ -37,17 +37,17 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   let className = `flex items-center justify-center rounded-full  ${bg_color || 'bg-[#FB9400]'} `;
 
-  switch (size) {
-    case 'small':
-      className += 'px-4 py-2 text-sm';
-      break;
-    case 'large':
-      className += 'px-8 py-3 text-base';
-      break;
-    default:
-      className += 'px-5 py-2.5 text-base'; 
-      break;
-  }
+    switch (size) {
+      case 'small':
+        className += 'px-4 py-2 text-sm';
+        break;
+      case 'large':
+        className += 'px-8 py-3 text-base';
+        break;
+      default:
+        className += 'px-5 py-2.5 text-base'; 
+        break;
+    }
 
   // Apply variant-specific classes
   switch (variant) {

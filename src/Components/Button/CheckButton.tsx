@@ -10,8 +10,13 @@ const CheckButton: React.FC<CheckButtonProps> = ({ data, onChange }) => {
     const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
     const handleCheckboxClick = (index: number) => {
-        setSelectedIndex(index);
-        onChange(data[index]?.key || null);
+        if (selectedIndex === index) {
+            setSelectedIndex(null);
+            onChange(null);
+        } else {
+            setSelectedIndex(index);
+            onChange(data[index]?.key || null);
+        }
     };
 
     return (
