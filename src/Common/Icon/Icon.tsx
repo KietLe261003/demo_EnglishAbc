@@ -168,7 +168,7 @@ export const IConCall = () => {
       <path
         fillRule='evenodd'
         d='M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z'
-        clip-rule='evenodd'
+        clipRule='evenodd'
       />
     </svg>
   );
@@ -187,7 +187,7 @@ export const IconSearch = ({ width = '1.25em', height = '1.25em' }) => {
       <path
         fillRule='evenodd'
         d='M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z'
-        clip-rule='evenodd'
+        clipRule='evenodd'
       ></path>
     </svg>
   );
@@ -221,7 +221,7 @@ export const IconFilter = ({ width = '1.25em', height = '1.25em' }) => {
       <path
         fillRule='evenodd'
         d='M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z'
-        clip-rule='evenodd'
+        clipRule='evenodd'
       />
     </svg>
   );
