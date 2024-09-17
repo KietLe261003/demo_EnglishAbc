@@ -10,3 +10,12 @@ export enum RouterLink {
     Chat="/chat",
     DetailCourseOffline="/course/offline/:id",
 }
+export enum RouterLinkAdmin {
+    Home="",
+    Account="account",
+    Certificate="certificate",
+    Course="course",
+    RegisteredCourse="registeredCourse",
+    Teacher="teacher",
+    Feedback="feedback"
+}

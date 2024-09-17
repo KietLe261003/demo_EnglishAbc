@@ -22,7 +22,9 @@ export default {
         ,
         grey: {
           100: "#f9f9f9"
-        }
+        },
+        backgroundsidebaradmin: '#FFF4E5',
+        textsidebar: "#8C8C8C"
       },
       screens: {
         '3xl': '2000px'
