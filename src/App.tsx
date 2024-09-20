@@ -24,7 +24,7 @@ const App: React.FC = () => {
           {
             adminRoute.map((route,index)=>{
               return (
-                <Route key={index} path={route.path} element={<route.element></route.element>}/>
+                <Route key={index} path={route.path} element={<route.element/>}/>
               )
             })
           }

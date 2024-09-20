@@ -8,7 +8,7 @@ function NavBarAdmin() {
   return (
     <div
       id='menu'
-      className='bg-backgroundsidebaradmin min-w-64 min-h-[1500px] col-span-2 rounded-lg p-4 flex flex-col'
+      className='bg-backgroundsidebaradmin min-w-64 h-screen col-span-2 rounded-lg p-4 flex flex-col'
     >
       <div className='px-[40px] flex justify-center items-center'>
         <img src={Logo} alt='G-EASY English Logo' className='h-100% mr-4' />
