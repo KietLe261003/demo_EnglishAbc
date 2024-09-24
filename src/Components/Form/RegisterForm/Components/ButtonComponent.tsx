@@ -1,10 +1,16 @@
-const ButtonComponent = () => {
+import React from "react";
+
+interface Buttonprop extends React.ButtonHTMLAttributes<HTMLElement>{
+  onClick: ()=>void
+}
+const ButtonComponent:React.FC<Buttonprop> = ({onClick}) => {
   return (
     <div>
       {/* Auth Button */}
       <div className="flex justify-end">
         <button
           type="submit"
+          onClick={onClick}
           className="
                         min-w-[180px] min-h-[26px] py-3 mt-3 bg-[#FB9400] rounded-3xl
                         font-bold text-white text-base

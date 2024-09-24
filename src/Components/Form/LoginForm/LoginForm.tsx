@@ -5,7 +5,6 @@ import { IconWindowClose } from "../../../Common/Icon/Icon";
 const LoginForm = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isFormVisible, setIsFormVisible] = useState(true);
-
   const closeForm = () => {
     setIsFormVisible(false);
   };
@@ -116,7 +115,7 @@ const LoginForm = () => {
                   {/* Auth Button */}
                   <div className="flex justify-end">
                     <button
-                      type="submit"
+                      type="button"
                       className="
                           min-w-[110px] min-h-[26px] py-2 mt-3 mx-1 bg-[#ECEBE9] rounded-3xl
                           font-bold text-[#4F4B45] text-sm

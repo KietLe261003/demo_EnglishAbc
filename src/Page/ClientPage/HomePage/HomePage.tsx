@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import BannerLarge from "../../../Components/Banner/BannerLarge";
 import ContentSession from "../../../Components/Content/ContentSession";
-import LoginForm from "../../../Components/Form/LoginForm/LoginForm";
 import ContentHome from "./Components/ContentHome";
 import ListIconContentHome from "./Components/ListIconContentHome";
 import { userServices } from "../../../Services/UserService";
+import RegisterForm from "../../../Components/Form/RegisterForm/RegisterForm";
 const HomePage = () => {
   const getUser = async ()=>{
     const listUser = await userServices.getAllUser();
@@ -34,7 +34,7 @@ const HomePage = () => {
         content="G-Easy helps you check your English level from there to have a good orientation for yourself"
         contentButton="Làm bài ngay"
       />
-      <LoginForm />
+      <RegisterForm/>
     </div>
   );
 };
