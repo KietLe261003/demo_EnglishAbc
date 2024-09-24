@@ -30,7 +30,7 @@ const RegisterForm = () => {
             <button
               className='absolute top-3 right-4 text-slate-600 text-xl hover:text-gray-500 focus:outline-none'
               onClick={closeForm}
-            >
+            > 
               <IconWindowClose />
             </button>
             {/* Auth Card Container */}
@@ -39,8 +39,8 @@ const RegisterForm = () => {
               <div>
                 <CardTitleComponent />
                 <div>
-                  <div className='mt-8 font-medium'>Họ và tên</div>
-                  <form className='mt-2' method='POST'>
+                  <div className='mt-5 font-medium'>Họ và tên</div>
+                    <form className='mt-2' method='POST'>
                     {/* Email Input */}
                     <label
                       htmlFor='email'
@@ -52,13 +52,13 @@ const RegisterForm = () => {
                       name='account'
                       autoComplete='account'
                       onChange={(e)=>{setFullName(e.target.value)}}
-                      className='block w-full py-3 px-1 mt-2  text-gray-800 appearance-none border rounded-xl border-[#9E988F] focus:text-gray-500 focus:outline-none focus:border-[#9E988F]'
+                      className='block w-full py-1.5 px-1 mt-2  text-gray-800 appearance-none border rounded-xl border-[#9E988F] focus:text-gray-500 focus:outline-none focus:border-[#9E988F]'
                       required
                     />
                   </form>
                 </div>
                 <div>
-                  <div className='mt-8 font-medium'>Tên đăng nhập</div>
+                  <div className='mt-3 font-medium'>Tên đăng nhập</div>
                   <form className='mt-2' method='POST'>
                     {/* Email Input */}
                     <label
@@ -72,7 +72,7 @@ const RegisterForm = () => {
                       autoComplete='account'
                       onChange={(e)=>{setUserName(e.target.value)}}
                       className='
-                    block w-full py-3 px-1 mt-2 
+                    block w-full py-1.5 px-1 mt-2 
                     text-gray-800 appearance-none 
                     border rounded-xl border-[#9E988F]
                     focus:text-gray-500 focus:outline-none focus:border-[#9E988F]
@@ -82,7 +82,7 @@ const RegisterForm = () => {
                   </form>
                 </div>
                 <div>
-                  <div className='mt-8 font-medium'>Mật khẩu</div>
+                  <div className='mt-3 font-medium'>Mật khẩu</div>
                   <form className='mt-2' method='POST'>
                     {/* Email Input */}
                     <label
@@ -96,7 +96,7 @@ const RegisterForm = () => {
                       autoComplete='account'
                       onChange={(e)=>{setPassword(e.target.value)}}
                       className='
-                    block w-full py-3 px-1 mt-2 
+                    block w-full py-1.5 px-1 mt-2 
                     text-gray-800 appearance-none 
                     border rounded-xl border-[#9E988F]
                     focus:text-gray-500 focus:outline-none focus:border-[#9E988F]
@@ -107,7 +107,7 @@ const RegisterForm = () => {
                 </div>
                 <div className='flex'>
                   <div>
-                    <div className='mt-8 font-medium'>Email</div>
+                    <div className='mt-3 font-medium'>Email</div>
                     <div className='relative flex items-center'>
                       <input
                         id='email'
@@ -116,7 +116,7 @@ const RegisterForm = () => {
                         autoComplete='current-email'
                         onChange={(e)=>{setEmail(e.target.value)}}
                         className='
-                        block w-[260px] py-3 px-4 pr-10 mt-2
+                        block w-[260px] py-1.5 px-4 pr-10 mt-2
                         text-gray-800 appearance-none 
                         border rounded-xl border-[#9E988F]
                         focus:text-gray-500 focus:outline-none focus:border-[#9E988F]
@@ -126,7 +126,7 @@ const RegisterForm = () => {
                     </div>
                   </div>
                   <div className='ml-5 font-medium'>
-                    <div className='mt-8 ml-'>Số điện thoại </div>
+                    <div className='mt-3 ml-'>Số điện thoại </div>
                     <div className='relative flex items-center'>
                       <input
                         id='tel'
@@ -135,7 +135,7 @@ const RegisterForm = () => {
                         autoComplete='current-number'
                         onChange={(e)=>{setPhone(e.target.value)}}
                         className='
-                        block w-[260px] py-3 px-4 pr-10 mt-2
+                        block w-[260px] py-1.5 px-4 pr-10 mt-2
                         text-gray-800 appearance-none 
                         border rounded-xl border-[#9E988F]
                         focus:text-gray-500 focus:outline-none focus:border-[#9E988F]
@@ -146,7 +146,7 @@ const RegisterForm = () => {
                   </div>
                 </div>
                 <div>
-                  <div className='mt-10 font-medium'>
+                  <div className='mt-3 font-medium'>
                     Hãy cho G-Easy biết bạn cần gì nhé!
                   </div>
                   <div className='relative flex items-center'>
