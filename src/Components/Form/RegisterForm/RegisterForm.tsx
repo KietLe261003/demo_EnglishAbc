@@ -2,25 +2,37 @@ import { useState } from 'react';
 import { IconWindowClose } from '../../../Common/Icon/Icon';
 import CardTitleComponent from '../RegisterForm/Components/CardTitleComponent';
 import ButtonComponent from './Components/ButtonComponent';
+import { request } from '../../../Common/Config/Request';
+import { UserLogup } from '../../../Type/UserLogup';
 
 const RegisterForm = () => {
   const [isFormVisible, setIsFormVisible] = useState(true);
   const [fullName,setFullName]=useState<string>("");
-  const [userName,setUserName]=useState<string>();
-  const [email,setEmail]=useState<string>();
-  const [phone,setPhone]=useState<string>();
-  const [password,setPassword]=useState<string>();
-  const [description,setDescription]=useState<string>();
+  const [userName,setUserName]=useState<string>("");
+  const [email,setEmail]=useState<string>("");
+  const [phone,setPhone]=useState<string>("");
+  const [password,setPassword]=useState<string>("");
+  const [description,setDescription]=useState<string>("");
   const closeForm = () => {
     setIsFormVisible(false);
   };
   const Register =()=>{
-    console.log(fullName);
-    console.log(userName);
-    console.log(email);
-    console.log(phone);
-    console.log(password);
-    console.log(description);
+    const newUser:UserLogup={
+      username: userName,
+      fullname: fullName,
+      email: email,
+      phone: phone,
+      password: password,
+      description: description
+    }
+    request.post('/users',newUser)
+    .then((res)=>{
+      alert("Thành công");
+      console.log(res);
+    }).catch((e)=>{
+      console.log(e);
+      alert("Thất bại")
+    })
   }
   return (
     <>
