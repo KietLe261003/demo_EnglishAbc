@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { IconWindowClose } from '../../../Common/Icon/Icon';
 import CardTitleComponent from '../RegisterForm/Components/CardTitleComponent';
 import ButtonComponent from './Components/ButtonComponent';
-import { request } from '../../../Common/Config/Request';
 import { UserLogup } from '../../../Type/UserLogup';
+import { userServices } from '../../../Services/UserService';
+import { responseUser } from '../../../Type/ResponseUser';
 
 const RegisterForm = () => {
   const [isFormVisible, setIsFormVisible] = useState(true);
@@ -16,7 +17,7 @@ const RegisterForm = () => {
   const closeForm = () => {
     setIsFormVisible(false);
   };
-  const Register =()=>{
+  const Register = async ()=>{
     const newUser:UserLogup={
       username: userName,
       fullname: fullName,
@@ -25,14 +26,8 @@ const RegisterForm = () => {
       password: password,
       description: description
     }
-    request.post('/users',newUser)
-    .then((res)=>{
-      alert("Thành công");
-      console.log(res);
-    }).catch((e)=>{
-      console.log(e);
-      alert("Thất bại")
-    })
+    const responuser:responseUser = await userServices.createUser(newUser);
+    console.log(responuser);
   }
   return (
     <>
