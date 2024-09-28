@@ -1,5 +1,6 @@
 import { request } from "../Common/Config/Request"
 import { responseUser } from "../Type/ResponseUser";
+import { UserLogup } from "../Type/UserLogup";
 
 export const userServices={
     getAllUser: async ()=>{
@@ -9,6 +10,15 @@ export const userServices={
             console.log(e);
         });
         return response;
+    },
+    createUser: async(user:UserLogup)=>{
+        const response = await request.post<responseUser>("/users",user).then((response)=>{
+            alert("Thành công");
+            return response.data
+        }).catch((e)=>{
+            alert("Thất bại");
+            return e;
+        })
+        return response;
     }
-
 }
