@@ -13,10 +13,8 @@ export const userServices={
     },
     createUser: async(user:UserLogup)=>{
         const response = await request.post<responseUser>("/users",user).then((response)=>{
-            alert("Thành công");
             return response.data
         }).catch((e)=>{
-            alert("Thất bại");
             return e;
         })
         return response;

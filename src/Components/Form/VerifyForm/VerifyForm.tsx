@@ -5,13 +5,9 @@ import InputOtp from "./Components/InputOtp";
 import Button from "../../Button/Button";
 
 const VerifyForm = () => {
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isFormVisible, setIsFormVisible] = useState(true);
   const closeForm = () => {
     setIsFormVisible(false);
-  };
-  const togglePasswordVisibility = () => {
-    setIsPasswordVisible(!isPasswordVisible);
   };
   return (
     <>

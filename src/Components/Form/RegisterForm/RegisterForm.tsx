@@ -1,13 +1,15 @@
-import { useState } from 'react';
-import { IconWindowClose } from '../../../Common/Icon/Icon';
-import ButtonComponent from './Components/ButtonComponent';
+import React, {useState } from 'react';
+import { IconArrowRight, IconWindowClose } from '../../../Common/Icon/Icon';
 import { UserLogup } from '../../../Type/UserLogup';
 import CardTitleComponent from '../CardTitleComponent';
 import { responseUser } from '../../../Type/ResponseUser';
 import { userServices } from '../../../Services/UserService';
-
-const RegisterForm = () => {
-  const [isFormVisible, setIsFormVisible] = useState(true);
+import Button from '../../Button/Button';
+interface RegisterFormProps{
+  openForm: number,
+  setOpenForm: React.Dispatch<React.SetStateAction<number>>
+}
+const RegisterForm:React.FC<RegisterFormProps> = ({openForm,setOpenForm}) => {
   const [fullName,setFullName]=useState<string>("");
   const [userName,setUserName]=useState<string>("");
   const [email,setEmail]=useState<string>("");
@@ -15,7 +17,7 @@ const RegisterForm = () => {
   const [password,setPassword]=useState<string>("");
   const [description,setDescription]=useState<string>("");
   const closeForm = () => {
-    setIsFormVisible(false);
+    setOpenForm(0);
   };
   const Register = async ()=>{
     const newUser:UserLogup={
@@ -27,27 +29,33 @@ const RegisterForm = () => {
       description: description
     }
     const responuser:responseUser = await userServices.createUser(newUser);
-    console.log(responuser);
+    if(responuser.code===0)
+      setOpenForm(3);
+    else 
+      alert("Đăng ký thất bại");
   }
   return (
     <>
-      {isFormVisible && (
+      {openForm==2 && (
         <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50'>
           <div className='bg-white max-h-full rounded-3xl shadow-md lg:shadow-lg p-6 sm:p-10 relative'>
             <button
               className='absolute top-3 right-4 text-slate-600 text-xl hover:text-gray-500 focus:outline-none'
               onClick={closeForm}
-            > 
+            >
               <IconWindowClose />
             </button>
             {/* Auth Card Container */}
             <div className='grid place-items-center mx-2 my-20 sm:my-auto'>
               {/* Auth Card */}
               <div>
-                <CardTitleComponent content="Để lại thông tin" description="G-Easy sẽ liên hệ với bạn sớm nhất có thể"/>
+                <CardTitleComponent
+                  content='Để lại thông tin'
+                  description='G-Easy sẽ liên hệ với bạn sớm nhất có thể'
+                />
                 <div>
                   <div className='mt-5 font-medium'>Họ và tên</div>
-                    <form className='mt-2' method='POST'>
+                  <form className='mt-2' method='POST'>
                     {/* Email Input */}
                     <label
                       htmlFor='email'
@@ -58,7 +66,9 @@ const RegisterForm = () => {
                       type='account'
                       name='account'
                       autoComplete='account'
-                      onChange={(e)=>{setFullName(e.target.value)}}
+                      onChange={(e) => {
+                        setFullName(e.target.value);
+                      }}
                       className='block w-full py-1.5 px-1 mt-2  text-gray-800 appearance-none border rounded-xl border-[#9E988F] focus:text-gray-500 focus:outline-none focus:border-[#9E988F]'
                       required
                     />
@@ -77,7 +87,9 @@ const RegisterForm = () => {
                       type='account'
                       name='account'
                       autoComplete='account'
-                      onChange={(e)=>{setUserName(e.target.value)}}
+                      onChange={(e) => {
+                        setUserName(e.target.value);
+                      }}
                       className='
                     block w-full py-1.5 px-1 mt-2 
                     text-gray-800 appearance-none 
@@ -101,7 +113,9 @@ const RegisterForm = () => {
                       type='account'
                       name='account'
                       autoComplete='account'
-                      onChange={(e)=>{setPassword(e.target.value)}}
+                      onChange={(e) => {
+                        setPassword(e.target.value);
+                      }}
                       className='
                     block w-full py-1.5 px-1 mt-2 
                     text-gray-800 appearance-none 
@@ -121,7 +135,9 @@ const RegisterForm = () => {
                         type='email'
                         name='email'
                         autoComplete='current-email'
-                        onChange={(e)=>{setEmail(e.target.value)}}
+                        onChange={(e) => {
+                          setEmail(e.target.value);
+                        }}
                         className='
                         block w-[260px] py-1.5 px-4 pr-10 mt-2
                         text-gray-800 appearance-none 
@@ -140,7 +156,9 @@ const RegisterForm = () => {
                         type='tel'
                         name='tel'
                         autoComplete='current-number'
-                        onChange={(e)=>{setPhone(e.target.value)}}
+                        onChange={(e) => {
+                          setPhone(e.target.value);
+                        }}
                         className='
                         block w-[260px] py-1.5 px-4 pr-10 mt-2
                         text-gray-800 appearance-none 
@@ -162,7 +180,9 @@ const RegisterForm = () => {
                       type='mess'
                       name='mess'
                       autoComplete='current-mess'
-                      onChange={(e)=>{setDescription(e.target.value)}}
+                      onChange={(e) => {
+                        setDescription(e.target.value);
+                      }}
                       className='
                         block w-full py-8 px-4 pr-10 mt-2
                         text-gray-800 appearance-none 
@@ -175,7 +195,17 @@ const RegisterForm = () => {
                     />
                   </div>
                 </div>
-                <ButtonComponent onClick={Register}/>
+                <div className='flex justify-end items-center mt-3 gap-3'>
+                  <Button variant='secondary'>Đăng nhập</Button>
+                  <Button 
+                    onClick={Register}  
+                  >
+                    <div className='flex justify-center items-center'>
+                      <div className='mt-1'>Gửi yêu cầu</div>
+                      <IconArrowRight/>
+                    </div>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

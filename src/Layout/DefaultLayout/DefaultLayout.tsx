@@ -10,7 +10,7 @@ const DefaultLayout = () => {
         <Sidebar /> {/* Sidebar ở bên trái */}
       </div>
       <main className="ml-[350px] w-full">
-        <Navbar /> {/* Navbar ở trên cùng */}
+        <Navbar/> {/* Navbar ở trên cùng */}
         <div className="p-[50px] mt-[70px] ">
           <Outlet />
         </div>

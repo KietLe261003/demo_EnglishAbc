@@ -4,9 +4,6 @@ import ContentSession from "../../../Components/Content/ContentSession";
 import ContentHome from "./Components/ContentHome";
 import ListIconContentHome from "./Components/ListIconContentHome";
 import { userServices } from "../../../Services/UserService";
-import RegisterForm from "../../../Components/Form/RegisterForm/RegisterForm";
-import LoginForm from "../../../Components/Form/LoginForm/LoginForm";
-import VerifyForm from "../../../Components/Form/VerifyForm/VerifyForm";
 const HomePage = () => {
   const getUser = async ()=>{
     const listUser = await userServices.getAllUser();
@@ -36,7 +33,6 @@ const HomePage = () => {
         content="G-Easy helps you check your English level from there to have a good orientation for yourself"
         contentButton="Làm bài ngay"
       />
-      <VerifyForm/>
     </div>
   );
 };
