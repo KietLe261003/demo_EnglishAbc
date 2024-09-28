@@ -3,6 +3,8 @@ import { IconWindowClose } from '../../../Common/Icon/Icon';
 import ButtonComponent from './Components/ButtonComponent';
 import { UserLogup } from '../../../Type/UserLogup';
 import CardTitleComponent from '../CardTitleComponent';
+import { responseUser } from '../../../Type/ResponseUser';
+import { userServices } from '../../../Services/UserService';
 
 const RegisterForm = () => {
   const [isFormVisible, setIsFormVisible] = useState(true);
