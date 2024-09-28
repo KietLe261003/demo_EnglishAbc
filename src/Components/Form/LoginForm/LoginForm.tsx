@@ -1,6 +1,6 @@
 import { useState } from "react";
-import CardTitleComponent from "./Components/CardTitleComponent";
 import { IconWindowClose } from "../../../Common/Icon/Icon";
+import CardTitleComponent from "../CardTitleComponent";
 
 const LoginForm = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -26,8 +26,7 @@ const LoginForm = () => {
             <div className="grid place-items-center mx-2 my-20 sm:my-auto">
               {/* Auth Card */}
               <div>
-                <CardTitleComponent />
-
+                <CardTitleComponent content="Good Morning!" description="Let’s learn English with G-easy every day"/>
                 <form className="mt-10" method="POST">
                   {/* Email Input */}
                   <label

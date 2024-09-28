@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { IconWindowClose } from '../../../Common/Icon/Icon';
-import CardTitleComponent from '../RegisterForm/Components/CardTitleComponent';
 import ButtonComponent from './Components/ButtonComponent';
 import { request } from '../../../Common/Config/Request';
 import { UserLogup } from '../../../Type/UserLogup';
+import CardTitleComponent from '../CardTitleComponent';
 
 const RegisterForm = () => {
   const [isFormVisible, setIsFormVisible] = useState(true);
@@ -49,7 +49,7 @@ const RegisterForm = () => {
             <div className='grid place-items-center mx-2 my-20 sm:my-auto'>
               {/* Auth Card */}
               <div>
-                <CardTitleComponent />
+                <CardTitleComponent content="Để lại thông tin" description="G-Easy sẽ liên hệ với bạn sớm nhất có thể"/>
                 <div>
                   <div className='mt-5 font-medium'>Họ và tên</div>
                     <form className='mt-2' method='POST'>
