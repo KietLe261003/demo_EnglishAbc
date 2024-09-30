@@ -260,3 +260,41 @@ export const IconArrowDown = () => {
     </svg>
   );
 };
+export const IconDetail = () => {
+  return (
+    <svg
+      className='text-[#624DE3]'
+      xmlns='http://www.w3.org/2000/svg'
+      width='24px'
+      height='24px'
+      viewBox='0 0 24 24'
+    >
+      <g
+        fill='none'
+        stroke='currentColor'
+        stroke-linecap='round'
+        stroke-linejoin='round'
+        stroke-width='2'
+      >
+        <path d='M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7' />
+        <path d='M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z' />
+      </g>
+    </svg>
+  );
+};
+export const IconTrash = () => {
+  return (
+    <svg
+      className='text-[#A30D11]'
+      xmlns='http://www.w3.org/2000/svg'
+      width='24px'
+      height='24px'
+      viewBox='0 0 256 256'
+    >
+      <path
+        fill='currentColor'
+        d='M216 48h-36V36a28 28 0 0 0-28-28h-48a28 28 0 0 0-28 28v12H40a12 12 0 0 0 0 24h4v136a20 20 0 0 0 20 20h128a20 20 0 0 0 20-20V72h4a12 12 0 0 0 0-24M100 36a4 4 0 0 1 4-4h48a4 4 0 0 1 4 4v12h-56Zm88 168H68V72h120Zm-72-100v64a12 12 0 0 1-24 0v-64a12 12 0 0 1 24 0m48 0v64a12 12 0 0 1-24 0v-64a12 12 0 0 1 24 0'
+      />
+    </svg>
+  );
+};
