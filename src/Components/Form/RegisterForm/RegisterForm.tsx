@@ -7,9 +7,10 @@ import { userServices } from '../../../Services/UserService';
 import Button from '../../Button/Button';
 interface RegisterFormProps{
   openForm: number,
-  setOpenForm: React.Dispatch<React.SetStateAction<number>>
+  setOpenForm: React.Dispatch<React.SetStateAction<number>>,
+  setInfoUser: React.Dispatch<React.SetStateAction<UserLogup|null>>
 }
-const RegisterForm:React.FC<RegisterFormProps> = ({openForm,setOpenForm}) => {
+const RegisterForm:React.FC<RegisterFormProps> = ({openForm,setOpenForm,setInfoUser}) => {
   const [fullName,setFullName]=useState<string>("");
   const [userName,setUserName]=useState<string>("");
   const [email,setEmail]=useState<string>("");
@@ -30,7 +31,10 @@ const RegisterForm:React.FC<RegisterFormProps> = ({openForm,setOpenForm}) => {
     }
     const responuser:responseUser = await userServices.createUser(newUser);
     if(responuser.code===0)
+    {
+      setInfoUser(newUser);
       setOpenForm(3);
+    }
     else 
       alert("Đăng ký thất bại");
   }

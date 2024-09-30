@@ -15,6 +15,15 @@ export const userServices={
         const response = await request.post<responseUser>("/users",user).then((response)=>{
             return response.data
         }).catch((e)=>{
+            console.log(e);
+            return e;
+        })
+        return response;
+    },
+    verifyUser: async(user:UserLogup | null)=>{
+        const response=await request.post<responseUser>("/users",user).then((response)=>{
+            return response.data;
+        }).catch((e)=>{
             return e;
         })
         return response;

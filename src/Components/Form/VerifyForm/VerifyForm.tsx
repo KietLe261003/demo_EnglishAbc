@@ -1,14 +1,22 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { IconWindowClose } from "../../../Common/Icon/Icon";
 import CardTitleComponent from "../CardTitleComponent";
 import InputOtp from "./Components/InputOtp";
 import Button from "../../Button/Button";
-
-const VerifyForm = () => {
+import { UserLogup } from "../../../Type/UserLogup";
+import { userServices } from "../../../Services/UserService";
+interface VerifyFormProps{
+  infoUser: UserLogup | null
+}
+const VerifyForm:React.FC<VerifyFormProps> = ({infoUser}) => {
   const [isFormVisible, setIsFormVisible] = useState(true);
   const closeForm = () => {
     setIsFormVisible(false);
   };
+  const clickVerify = async ()=>{
+    const response = await userServices.verifyUser(infoUser);
+    console.log(response);
+  }
   return (
     <>
       {isFormVisible && (
@@ -28,7 +36,7 @@ const VerifyForm = () => {
                 <form className="mt-10" method="POST">
                   <InputOtp></InputOtp>
                   <div className=" flex justify-center">
-                    <Button>Xác nhận</Button>
+                    <Button onClick={clickVerify}>Xác nhận</Button>
                   </div>
                 </form>
               </div>

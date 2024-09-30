@@ -4,5 +4,6 @@ export interface UserLogup {
     email: string,
     phone: string,
     description: string,
-    password: string
+    password: string,
+    code?: number
 }
