@@ -1,3 +1,4 @@
+import AddStatusAdmin from "../../../Components/Button/AddStatusAdmin";
 import TableAdmin from "../../../Components/Table/TableAdmin";
 import { User } from "../../../Type/User";
 
@@ -18,8 +19,14 @@ function ManagementAccount() {
         "role",
         "Action",
       ];
+      const status=[
+        "Status",
+        "Bị khóa",
+        "Hoạt động"
+      ]
     return (  
         <div className="w-full">
+            <AddStatusAdmin contentAdd="Add User" contentStatus={status} />
             <TableAdmin column={column} data={data}></TableAdmin>
         </div>
     );

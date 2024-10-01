@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import { IconDetail, IconTrash } from "../../Common/Icon/Icon";
 import Pagination from "./Pagination";
 
@@ -7,6 +8,8 @@ interface TableAdminProps {
   data: T[];
 }
 const TableAdmin: React.FC<TableAdminProps> = ({ data, column }) => {
+  const [openFormRemove,setOpenFormRemove]=useState<boolean>(false);
+  
   return (
     <>
       <table className='rounded-t-lg m-5 w-full  mx-auto bg-[#FFF4E5] text-gray-800'>
