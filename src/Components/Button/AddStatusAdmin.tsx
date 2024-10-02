@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import CreateForm from '../../Page/AdminPage/Account/Components/CreateForm';
 
 interface AddStatusAdminProps {
   contentAdd: string;
@@ -33,6 +34,7 @@ const AddStatusAdmin: React.FC<AddStatusAdminProps> = ({
       >
         {contentAdd}
       </button>
+      <CreateForm openForm={openFormCreate} setOpenForm={setOpenFormCreate}/>
     </div>
   );
 };
