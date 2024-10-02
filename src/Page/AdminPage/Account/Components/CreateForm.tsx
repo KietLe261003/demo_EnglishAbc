@@ -1,23 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IconWindowClose } from "../../../../Common/Icon/Icon";
 import InputTypeString from "../../../../Components/Input/InputTypeString";
 import InputDescription from "../../../../Components/Input/InputDescription";
+import { User } from "../../../../Type/User";
 
 
 interface CreateFormProps{
     openForm: boolean,
-    setOpenForm: React.Dispatch<React.SetStateAction<boolean>>
+    setOpenForm: React.Dispatch<React.SetStateAction<boolean>>,
+    content?: string,
+    userChoose?: User | null
 }
-const CreateForm:React.FC<CreateFormProps> = ({openForm,setOpenForm}) => {
-  const [nameAccount,setNameAccount]=useState<string>("");
-  const [email,setEmail]=useState<string>("");
-  const [userName,setUserName]=useState<string>("");
-  const [phoneNumber,setPhoneNumber]=useState<string>("");
-  const [password,setPassword]=useState<string>("");
-  const [description,setDescription]=useState<string>("");
+const CreateForm:React.FC<CreateFormProps> = ({openForm,setOpenForm,content="ADD NEWS ACCOUNT",userChoose}) => {
+  const [nameAccount, setNameAccount] = useState<string>(userChoose?.fullname || "");
+  const [email, setEmail] = useState<string>(userChoose?.email || "");
+  const [userName, setUserName] = useState<string>(userChoose?.username || "");
+  const [phoneNumber, setPhoneNumber] = useState<string>(userChoose?.phone || "");
+  const [password, setPassword] = useState<string>(userChoose?.password || "");
+  const [description,setDescription]=useState<string>(userChoose?.desciption || "");
+  
   const closeFormModal = () => {
     setOpenForm(false);
   };
+  useEffect(() => {
+    if (userChoose) {
+      setNameAccount(userChoose.fullname || "");
+      setEmail(userChoose.email || "");
+      setUserName(userChoose.username || "");
+      setPhoneNumber(userChoose.phone || "");
+      setPassword(userChoose.password || "");
+      setDescription(userChoose.desciption || "");
+    }
+  }, [userChoose]);
   return (
     <>
       {openForm == true && (
@@ -32,7 +46,7 @@ const CreateForm:React.FC<CreateFormProps> = ({openForm,setOpenForm}) => {
             <div className='grid place-items-center mx-2 my-20 sm:my-auto'>
               <div className='w-full'>
                 <div className='flex justify-center text-black text-[30px] font-bold'>
-                  ADD NEWS ACCOUNT
+                  {content}
                 </div>
                 <form className='mt-10' method='POST'>
                   <InputTypeString

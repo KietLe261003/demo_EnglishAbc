@@ -1,53 +1,60 @@
-
-import { useState } from "react";
+import React from "react";
 import { IconDetail, IconTrash } from "../../Common/Icon/Icon";
 import Pagination from "./Pagination";
 
-interface TableAdminProps {
+interface TableAdminProps<T> {
   column: string[];
   data: T[];
+  setOpenFormDetail: React.Dispatch<React.SetStateAction<boolean>>;
+  setOpenFormRemove: React.Dispatch<React.SetStateAction<boolean>>;
+  setUserChoose: React.Dispatch<React.SetStateAction<T | null>>;
 }
-const TableAdmin: React.FC<TableAdminProps> = ({ data, column }) => {
-  const [openFormRemove,setOpenFormRemove]=useState<boolean>(false);
+
+const TableAdmin = <T,>({ data, column, setOpenFormDetail, setOpenFormRemove, setUserChoose }: TableAdminProps<T>) => {
   
   return (
     <>
       <table className='rounded-t-lg m-5 w-full  mx-auto bg-[#FFF4E5] text-gray-800'>
-        <tr className=' border-b-2 border-gray-300'>
-          {column.map((item, index) => {
+        <thead>
+          <tr className=' border-b-2 border-gray-300'>
+            {column.map((item, index) => {
+              return (
+                <th key={index} className='px-4 py-3'>
+                  {item}
+                </th>
+              );
+            })}
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((item, index) => {
             return (
-              <th key={index} className='px-4 py-3'>
-                {item}
-              </th>
+              <tr
+                key={index}
+                className={`${
+                  index % 2 === 0 ? 'bg-gray-100 border-gray-200' : 'bg-[#D6B2B2]'
+                } border-b rounded-t-lg m-5 w-full  mx-auto`}
+              >
+                {column.map((field) => {
+                  return field === 'Action' ? ( 
+                    <td className='px-4 py-3 text-center'>
+                      <button className='m-[15px]' onClick={() => { setOpenFormDetail(true); setUserChoose(item); }}>
+                        <IconDetail />
+                      </button>
+                      <button className='m-[15px]' onClick={() => { setOpenFormRemove(true); setUserChoose(item); }}>
+                        <IconTrash />
+                      </button>
+                    </td>
+                  ) : (
+                    <td className='px-4 py-3 text-center'>{(item as any)[field]}</td> // Using 'any' to access dynamic fields
+                  );
+                })}
+              </tr>
             );
           })}
-        </tr>
-        {data.map((item, index) => {
-          return (
-            <tr
-              className={`${
-                index % 2 === 0 ? 'bg-gray-100 border-gray-200' : 'bg-[#D6B2B2] '
-              } border-b rounded-t-lg m-5 w-full  mx-auto`}
-            >
-              {column.map((field) => {
-                return  field === 'Action' ? ( //Check if action render 2 button
-                  <td className='px-4 py-3 text-center'>
-                    <button className='m-[15px]'>
-                      <IconDetail/>
-                    </button>
-                    <button className='m-[15px]'>
-                      <IconTrash/>
-                    </button>
-                  </td>
-                ) : (
-                  <td className='px-4 py-3 text-center'>{item[field]}</td>
-                );
-              })}
-            </tr>
-          );
-        })}
+        </tbody>
       </table>
-      <Pagination/>
+      <Pagination />
     </>
   );
 };
