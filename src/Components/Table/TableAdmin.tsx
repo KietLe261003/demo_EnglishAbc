@@ -7,10 +7,10 @@ interface TableAdminProps<T> {
   data: T[];
   setOpenFormDetail: React.Dispatch<React.SetStateAction<boolean>>;
   setOpenFormRemove: React.Dispatch<React.SetStateAction<boolean>>;
-  setUserChoose: React.Dispatch<React.SetStateAction<T | null>>;
+  setItemChoose: React.Dispatch<React.SetStateAction<T | null>>;
 }
 
-const TableAdmin = <T,>({ data, column, setOpenFormDetail, setOpenFormRemove, setUserChoose }: TableAdminProps<T>) => {
+const TableAdmin = <T,>({ data, column, setOpenFormDetail, setOpenFormRemove, setItemChoose }: TableAdminProps<T>) => {
   
   return (
     <>
@@ -38,15 +38,15 @@ const TableAdmin = <T,>({ data, column, setOpenFormDetail, setOpenFormRemove, se
                 {column.map((field) => {
                   return field === 'Action' ? ( 
                     <td className='px-4 py-3 text-center'>
-                      <button className='m-[15px]' onClick={() => { setOpenFormDetail(true); setUserChoose(item); }}>
+                      <button className='m-[15px]' onClick={() => { setOpenFormDetail(true); setItemChoose(item); }}>
                         <IconDetail />
                       </button>
-                      <button className='m-[15px]' onClick={() => { setOpenFormRemove(true); setUserChoose(item); }}>
+                      <button className='m-[15px]' onClick={() => { setOpenFormRemove(true); setItemChoose(item); }}>
                         <IconTrash />
                       </button>
                     </td>
                   ) : (
-                    <td className='px-4 py-3 text-center'>{(item as any)[field]}</td> // Using 'any' to access dynamic fields
+                    <td className='px-4 py-3 text-center'>{(item as any)[field]+""}</td> // Using 'any' to access dynamic fields
                   );
                 })}
               </tr>

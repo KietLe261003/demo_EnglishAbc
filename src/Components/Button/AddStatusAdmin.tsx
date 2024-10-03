@@ -1,17 +1,15 @@
-import { useState } from 'react';
-import CreateForm from '../../Page/AdminPage/Account/Components/CreateForm';
-
 interface AddStatusAdminProps {
   contentAdd: string;
   contentStatus: string[];
+  setOpenForm: React.Dispatch<React.SetStateAction<boolean>>,
 }
 const AddStatusAdmin: React.FC<AddStatusAdminProps> = ({
   contentAdd,
   contentStatus,
+  setOpenForm
 }) => {
-  const [openFormCreate, setOpenFormCreate] = useState<boolean>(false);
   const toggleCreateForm = () => {
-    setOpenFormCreate(!openFormCreate);
+    setOpenForm(true)
   };
   return (
     <div className='flex justify-end mx-auto'>
@@ -34,7 +32,6 @@ const AddStatusAdmin: React.FC<AddStatusAdminProps> = ({
       >
         {contentAdd}
       </button>
-      <CreateForm openForm={openFormCreate} setOpenForm={setOpenFormCreate}/>
     </div>
   );
 };

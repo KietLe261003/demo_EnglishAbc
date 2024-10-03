@@ -45,8 +45,8 @@ function ManagementAccount() {
       }
     return (  
         <div className="w-full">
-            <AddStatusAdmin contentAdd="Add User" contentStatus={status} />
-            <TableAdmin column={column} data={users} setOpenFormDetail={setDetailForm} setOpenFormRemove={setRemoveForm} setUserChoose={setUserChoose}></TableAdmin>
+            <AddStatusAdmin contentAdd="Add User" contentStatus={status} setOpenForm={setDetailForm} />
+            <TableAdmin column={column} data={users} setOpenFormDetail={setDetailForm} setOpenFormRemove={setRemoveForm} setItemChoose={setUserChoose}></TableAdmin>
             <CreateForm openForm={detailForm} setOpenForm={setDetailForm} content="Detail User" userChoose={userChoose}/>
             <RemoveForm openForm={removeForm} setOpenForm={setRemoveForm} clickRemove={removeUser} />
         </div>
