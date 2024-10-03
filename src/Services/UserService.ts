@@ -1,6 +1,6 @@
 import { request } from "../Common/Config/Request"
-import { responseUser } from "../Type/ResponseUser";
-import { UserLogup } from "../Type/UserLogup";
+import { responseUser } from "../Type/User/ResponseUser";
+import { UserLogup } from "../Type/User/UserLogup";
 
 export const userServices={
     getAllUser: async ()=>{

@@ -3,7 +3,7 @@ import { IconWindowClose } from "../../../Common/Icon/Icon";
 import CardTitleComponent from "../CardTitleComponent";
 import InputOtp from "./Components/InputOtp";
 import Button from "../../Button/Button";
-import { UserLogup } from "../../../Type/UserLogup";
+import { UserLogup } from "../../../Type/User/UserLogup";
 import { userServices } from "../../../Services/UserService";
 interface VerifyFormProps{
   infoUser: UserLogup | null

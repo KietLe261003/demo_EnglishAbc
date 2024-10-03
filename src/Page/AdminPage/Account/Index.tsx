@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AddStatusAdmin from "../../../Components/Button/AddStatusAdmin";
 import TableAdmin from "../../../Components/Table/TableAdmin";
-import { User } from "../../../Type/User";
+import { User } from "../../../Type/User/User";
 import CreateForm from "./Components/CreateForm";
 import RemoveForm from "../../../Components/Form/RemoveForm";
 

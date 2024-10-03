@@ -13,6 +13,7 @@ export enum RouterLink {
 export enum RouterLinkAdmin {
     Home="",
     Account="account",
+    Document="document",
     Certificate="certificate",
     Course="course",
     RegisteredCourse="registeredCourse",
