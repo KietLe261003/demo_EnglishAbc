@@ -3,7 +3,7 @@ import LoginForm from "../../../Components/Form/LoginForm/LoginForm";
 import RegisterForm from "../../../Components/Form/RegisterForm/RegisterForm";
 import VerifyForm from "../../../Components/Form/VerifyForm/VerifyForm";
 import Button from "../../../Components/Button/Button";
-import { UserLogup } from "../../../Type/UserLogup";
+import { UserLogup } from "../../../Type/User/UserLogup";
 
 const ControllerForm = () => {
     const [typeForm,setTypeFrom]=useState<number>(0);

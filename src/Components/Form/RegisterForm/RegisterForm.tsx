@@ -1,8 +1,8 @@
 import React, {useState } from 'react';
 import { IconArrowRight, IconWindowClose } from '../../../Common/Icon/Icon';
-import { UserLogup } from '../../../Type/UserLogup';
+import { UserLogup } from '../../../Type/User/UserLogup';
 import CardTitleComponent from '../CardTitleComponent';
-import { responseUser } from '../../../Type/ResponseUser';
+import { responseUser } from '../../../Type/User/ResponseUser';
 import { userServices } from '../../../Services/UserService';
 import Button from '../../Button/Button';
 interface RegisterFormProps{

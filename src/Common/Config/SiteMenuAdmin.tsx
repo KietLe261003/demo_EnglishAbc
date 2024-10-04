@@ -13,6 +13,11 @@ export const siteMenuAdmin = [
       href: RouterLinkAdmin.Account,
     },
     {
+      content: "Documents",
+      icon: <IconCourse/>,
+      href: RouterLinkAdmin.Document
+    },
+    {
       content: 'Certificate Managerment',
       icon: <IconCertificate/>,
       href: RouterLinkAdmin.Certificate,
