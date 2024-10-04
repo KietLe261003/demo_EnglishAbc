@@ -12,7 +12,7 @@ function ManagementDocument() {
 
   const items: Document = {
     id: '12412',
-    name: 'Thì hiện tại đơn',
+    nameDocument: 'Thì hiện tại đơn',
     description: 'Cách dùng, dấu hiện nhận biết',
     imagess: 'urlll',
     status: true,
@@ -21,7 +21,7 @@ function ManagementDocument() {
   };
   const documents=Array.from({ length: 10 }, () => ({ ...items }));
 
-  const column = ['id', 'name', 'status', 'isFree', 'price',"Action"];
+  const column = ['id', 'nameDocument', 'status', 'isFree', 'price',"Action"];
   const status = ['Status', 'Miễn Phí', 'Trả phí'];
   const removeDocument = ()=>{
     if(documentChoose)
@@ -40,7 +40,7 @@ function ManagementDocument() {
         setItemChoose={setDocumentChoose}
       />
       <RemoveForm openForm={removeForm} setOpenForm={setRemoveForm} clickRemove={removeDocument} />
-      <CreateFormDocument openForm={detailForm} setOpenForm={setDetailForm} content='Add new document'/>
+      <CreateFormDocument openForm={detailForm} setOpenForm={setDetailForm} content='Add new document' documentChoose={documentChoose} />
     </div>
   );
 }

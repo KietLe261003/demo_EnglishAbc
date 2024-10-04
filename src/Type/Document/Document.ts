@@ -1,9 +1,10 @@
 export interface Document{
     id: string,
-    name: string,
+    nameDocument: string,
     description: string,
     imagess: string,
     status: boolean,
     price?: number,
-    isFree: boolean
+    isFree: boolean,
+    content?: string
 }

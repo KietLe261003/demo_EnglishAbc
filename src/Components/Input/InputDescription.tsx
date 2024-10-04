@@ -16,11 +16,48 @@ const InputDescription:React.FC<InputTypeStringProps> = ({title,content,placehol
       <CKEditor
         editor={ClassicEditor}
         config={{
-          toolbar: [],
+          toolbar: {
+            items: [
+              'undo',
+              'redo',
+              '|',
+              'heading',
+              '|',
+              'fontSize',
+              'fontColor',
+              'fontBackgroundColor',
+              '|',
+              'bold',
+              'italic',
+              'strikethrough',
+              'subscript',
+              'superscript',
+              'code',
+              '-',
+              '|',
+              'alignment',
+              'link',
+              'imageUpload',
+              'blockQuote',
+              'codeBlock',
+              '|',
+              'bulletedList',
+              'numberedList',
+              'todoList',
+              'outdent',
+              'indent',
+            ],
+          },
+          image: {
+            toolbar: [
+              'imageTextAlternative',
+              'imageStyle:full',
+              'imageStyle:side',
+            ],
+          },
           placeholder: placeholder,
           initialData: content,
         }}
-        
         onChange={(event, editor) => {
           console.log(event);
           setContent(editor.getData());

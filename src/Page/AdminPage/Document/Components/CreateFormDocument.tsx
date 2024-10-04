@@ -2,34 +2,40 @@ import { useEffect, useState } from "react";
 import { IconWindowClose } from "../../../../Common/Icon/Icon";
 import InputTypeString from "../../../../Components/Input/InputTypeString";
 import InputDescription from "../../../../Components/Input/InputDescription";
-import { User } from "../../../../Type/User/User";
+import InputTypeBoolean from "../../../../Components/Input/InputSelectTrueFalse";
+import { Document } from "../../../../Type/Document/Document";
+import InputTypeNumber from "../../../../Components/Input/InputTypeNumber";
+import InputTypeFile from "../../../../Components/Input/InputTypeFile";
 
 
 interface CreateFormDocumentProps{
     openForm: boolean,
     setOpenForm: React.Dispatch<React.SetStateAction<boolean>>,
     content?: string,
-    documentChoose?: User | null
+    documentChoose?: Document | null
 }
 const CreateFormDocument:React.FC<CreateFormDocumentProps> = ({openForm,setOpenForm,content="ADD NEWS ACCOUNT",documentChoose}) => {
-  const [nameAccount, setNameAccount] = useState<string>(documentChoose?.fullname || "");
-  const [email, setEmail] = useState<string>(documentChoose?.email || "");
-  const [userName, setUserName] = useState<string>(documentChoose?.username || "");
-  const [phoneNumber, setPhoneNumber] = useState<string>(documentChoose?.phone || "");
-  const [password, setPassword] = useState<string>(documentChoose?.password || "");
-  const [description,setDescription]=useState<string>(documentChoose?.desciption || "");
+  const [nameDocument, setNameDocument] = useState<string>(documentChoose?.nameDocument|| "");
+  const [contentDocument, setContentDocument] = useState<string>(documentChoose?.content || "");
+  const [description,setDescription]=useState<string>(documentChoose?.description || "");
+  const [status,setStatus]=useState<boolean>(documentChoose?.status || true);
+  const [image,setImage]=useState<string>(documentChoose?.imagess || "");
+  const [price,setPrice]=useState<number>(documentChoose?.price || 0);
+  const [isFree,setIsFree]=useState<boolean>(documentChoose?.isFree || true);
+
   
   const closeFormModal = () => {
     setOpenForm(false);
   };
   useEffect(() => {
     if (documentChoose) {
-      setNameAccount(documentChoose.fullname || "");
-      setEmail(documentChoose.email || "");
-      setUserName(documentChoose.username || "");
-      setPhoneNumber(documentChoose.phone || "");
-      setPassword(documentChoose.password || "");
-      setDescription(documentChoose.desciption || "");
+      setNameDocument(documentChoose.nameDocument || "");
+      setDescription(documentChoose.description || "");
+      setContentDocument(documentChoose?.content || "");
+      setImage(documentChoose?.imagess || "");
+      setPrice(documentChoose?.price || 0);
+      setIsFree(documentChoose?.isFree || true);
+      setStatus(documentChoose?.status || true);
     }
   }, [documentChoose]);
   return (
@@ -43,50 +49,52 @@ const CreateFormDocument:React.FC<CreateFormDocumentProps> = ({openForm,setOpenF
             >
               <IconWindowClose />
             </button>
-            <div className='grid place-items-center mx-2 my-20 sm:my-auto'>
+            <div className='grid place-items-center mx-2 my-20 max-h-[700px] sm:my-auto overflow-y-auto'>
               <div className='w-full'>
                 <div className='flex justify-center text-black text-[30px] font-bold'>
                   {content}
                 </div>
                 <form className='mt-10' method='POST'>
                   <InputTypeString
-                    title='Full Name'
-                    content={nameAccount}
-                    setContent={setNameAccount}
-                    placeholder='Nhập tên người dùng'
-                  />
-                  <InputTypeString
-                    title='Email'
-                    content={email}
-                    setContent={setEmail}
-                    placeholder='Nhập email người dùng'
+                    title='Name Document'
+                    content={nameDocument}
+                    setContent={setNameDocument}
+                    placeholder='Nhập tên của tài liệu'
                   />
                   <div className='flex gap-2'>
-                    <InputTypeString
-                      title='Tên đăng nhập'
-                      content={userName}
-                      setContent={setUserName}
-                      placeholder='Nhập tên Đăng nhập'
+                    <InputTypeBoolean
+                      title='Loại'
+                      content={isFree}
+                      setContent={setIsFree}
                     />
-                    <InputTypeString
-                      title='Phone Number'
-                      content={phoneNumber}
-                      setContent={setPhoneNumber}
-                      placeholder='Nhập số điện thoại người dùng'
+                    <InputTypeBoolean
+                      title='Trạng thái'
+                      content={status}
+                      setContent={setStatus}
                     />
                   </div>
-                  <InputTypeString
-                    title='Mật khẩu'
-                    content={password}
-                    setContent={setPassword}
-                    placeholder='Nhập mật khẩu'
-                  />
+                  {
+                    !isFree &&
+                    <InputTypeNumber
+                      title='Giá tiền'
+                      content={price}
+                      setContent={setPrice}
+                      placeholder='Nhập giá tiền của tài liệu'
+                    />
+                  }
                   <InputDescription
-                    title='Mô tả mong muốn nếu có'
+                    title='Mô tả của khóa học'
                     content={description}
                     setContent={setDescription}
-                    placeholder='Mô tả về bản thân'
+                    placeholder='Mô tả về tài liệu học ngắn gọn'
                   />
+                  <InputDescription
+                    title='Nội dung của khóa học'
+                    content={contentDocument}
+                    setContent={setContentDocument}
+                    placeholder='Mô tả về tài liệu học ngắn gọn'
+                  />
+                  <InputTypeFile image={image} setImage={setImage}/>
                   <div className='flex justify-end'>
                     <button
                       type='button'
