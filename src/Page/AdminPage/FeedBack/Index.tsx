@@ -13,7 +13,7 @@ function ManagementFeedBack() {
         nameUser: "Quốc Trung",
         name: "Vấn đề về lớp học",
         description: "Lớp học quá tuyệt vời giáo viên quá giỏi",
-        timeFeedBack: "05/10/2024"
+        timeFeedBack: "2024/10/26"
     }
     const feedBacks=Array.from({length: 10},()=>({...item}));
     const columns=[
@@ -30,7 +30,7 @@ function ManagementFeedBack() {
     return ( 
         <div>
             <TableAdmin data={feedBacks} column={columns} setOpenFormDetail={setDetailForm} setOpenFormRemove={setRemoveForm} setItemChoose={setFeedBackChoose}/>
-            <CreateFormFeedBack openForm={detailForm} setOpenForm={setDetailForm}/>
+            <CreateFormFeedBack openForm={detailForm} setOpenForm={setDetailForm} content="FeedBack" feedBackChoose={feedBackChoose}/>
             <RemoveForm openForm={removeForm} setOpenForm={setRemoveForm} clickRemove={clickRemove}/>
         </div>
      );

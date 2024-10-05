@@ -2,45 +2,51 @@ import { useEffect, useState } from 'react';
 import { IconWindowClose } from '../../../../Common/Icon/Icon';
 import InputTypeString from '../../../../Components/Input/InputTypeString';
 import InputDescription from '../../../../Components/Input/InputDescription';
-import { FeedBack } from '../../../../Type/FeedBack/FeedBack';
 import InputTypeDateTime from '../../../../Components/Input/InputTypeDateTime';
+import { ResgiterCourse } from '../../../../Type/RegisteredCourse/RegisteredCourse';
+import InputTypeSelect from '../../../../Components/Input/InputTypeSelect';
 
-interface CreateFormFeedBackProps {
+interface CreateFormResgiterCourseProps {
   openForm: boolean;
   setOpenForm: React.Dispatch<React.SetStateAction<boolean>>;
   content?: string;
-  feedBackChoose?: FeedBack | null;
+  resgiterCourseChoose?: ResgiterCourse | null;
 }
-const CreateFormFeedBack: React.FC<CreateFormFeedBackProps> = ({
+const CreateFormResgiterCourse: React.FC<CreateFormResgiterCourseProps> = ({
   openForm,
   setOpenForm,
   content = 'ADD NEWS ACCOUNT',
-  feedBackChoose,
+  resgiterCourseChoose,
 }) => {
   const [nameUser, setNameUser] = useState<string>(
-    feedBackChoose?.nameUser || '',
+    resgiterCourseChoose?.nameUser || '',
   );
-  const [nameFeedBack, setNameFeedBack] = useState<string>(
-    feedBackChoose?.name || '',
+  const [phoneNumber, setPhoneNumber] = useState<string>(
+    resgiterCourseChoose?.phoneNumber || '',
   );
-  const [description, setDescription] = useState<string>(
-    feedBackChoose?.description || '',
+  const [dayOfBirth, setDayOfBirth] = useState<string>(
+    resgiterCourseChoose?.dayOfBirth || '',
   );
-  const [timeFeedBack, setTimeFeedBack] = useState<string>(
-    feedBackChoose?.timeFeedBack || '',
+  const [gender, setGender] = useState<string>(
+    resgiterCourseChoose?.gender || '',
   );
+  const [email, setEmail] = useState<string>(resgiterCourseChoose?.email || '');
+  const [note, setNote] = useState<string>(resgiterCourseChoose?.note || '');
 
   const closeFormModal = () => {
     setOpenForm(false);
   };
+  const genderSelect = ['Nam', 'Nữ'];
   useEffect(() => {
-    if (feedBackChoose) {
-      setNameUser(feedBackChoose?.nameUser || '');
-      setNameFeedBack(feedBackChoose?.name || '');
-      setDescription(feedBackChoose?.description || '');
-      setTimeFeedBack(feedBackChoose?.timeFeedBack || '');
+    if (resgiterCourseChoose) {
+      setNameUser(resgiterCourseChoose?.nameUser || '');
+      setPhoneNumber(resgiterCourseChoose?.phoneNumber || '');
+      setDayOfBirth(resgiterCourseChoose?.dayOfBirth || '');
+      setGender(resgiterCourseChoose?.gender || '');
+      setEmail(resgiterCourseChoose?.email || '');
+      setNote(resgiterCourseChoose?.note || '');
     }
-  }, [feedBackChoose]);
+  }, [resgiterCourseChoose]);
   return (
     <>
       {openForm == true && (
@@ -62,26 +68,39 @@ const CreateFormFeedBack: React.FC<CreateFormFeedBackProps> = ({
                     title='Name User'
                     content={nameUser}
                     setContent={setNameUser}
-                    placeholder='Tên của người dùng gửi feedback'
+                    placeholder='Tên của người dùng'
                   />
                   <InputTypeString
-                    title='Name FeedBack'
-                    content={nameFeedBack}
-                    setContent={setNameFeedBack}
-                    placeholder='Nội dung chính của feedback'
+                    title='Số điện thoại'
+                    content={phoneNumber}
+                    setContent={setPhoneNumber}
+                    placeholder='Số điện thoại người dùng'
                   />
-
+                  <div className='flex gap-2'>
+                    <InputTypeDateTime
+                      title='Ngày sinh'
+                      content={dayOfBirth}
+                      setContent={setDayOfBirth}
+                      placeholder='Ngày sinh của người dùng'
+                    />
+                    <InputTypeSelect
+                      title='Giới tính'
+                      content={gender}
+                      setContent={setGender}
+                      titleOption={genderSelect}
+                    />
+                  </div>
+                  <InputTypeString
+                    title='email'
+                    content={email}
+                    setContent={setEmail}
+                    placeholder='email liên hệ'
+                  />
                   <InputDescription
                     title='Mô tả chi tiết'
-                    content={description}
-                    setContent={setDescription}
+                    content={note}
+                    setContent={setNote}
                     placeholder='Mô tả về feedback'
-                  />
-                  <InputTypeDateTime
-                    title='Thời gian gửi'
-                    content={timeFeedBack}
-                    setContent={setTimeFeedBack}
-                    placeholder='Thời gian gửi'
                   />
                   <div className='flex justify-end'>
                     <button
@@ -116,4 +135,4 @@ const CreateFormFeedBack: React.FC<CreateFormFeedBackProps> = ({
   );
 };
 
-export default CreateFormFeedBack;
+export default CreateFormResgiterCourse;
