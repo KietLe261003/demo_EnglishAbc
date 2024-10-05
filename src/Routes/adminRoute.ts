@@ -1,5 +1,6 @@
 
 import ManagementAccount from "../Page/AdminPage/Account/Index";
+import ManagementCertificate from "../Page/AdminPage/Certificate/Index";
 import ManagementDocument from "../Page/AdminPage/Document/Document";
 import HomePageAdmin from "../Page/AdminPage/HomePage/HomePageAdmi";
 import { RouterLinkAdmin } from "../Util/RouterLink";
@@ -16,5 +17,9 @@ export const adminRoute=[
     {
         path: RouterLinkAdmin.Document,
         element: ManagementDocument
+    },
+    {
+        path: RouterLinkAdmin.Certificate,
+        element: ManagementCertificate
     }
 ]
