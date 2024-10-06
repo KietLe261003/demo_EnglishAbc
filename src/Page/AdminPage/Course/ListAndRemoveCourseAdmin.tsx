@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import Confirm from '../Component/Confirm';
+import Confirm from './Components/Confirm';
 import { FaAngleDown, FaRegEdit, FaRegTrashAlt } from 'react-icons/fa';
 import clsx from 'clsx';
+import AddNewCourse from './Components/AddNewCourse';
 
 interface Course {
   id: string;
@@ -38,6 +39,7 @@ const courses: Course[] = [
 ];
 
 const ListAndRemoveCourseAdmin: React.FC = () => {
+  const [detailForm,setDetailForm]=useState<boolean>(false);
   const [showModal, setShowModal] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
 
@@ -60,12 +62,12 @@ const ListAndRemoveCourseAdmin: React.FC = () => {
             Status
             <FaAngleDown className='ml-2' />
           </button>
-          <button className='bg-orange-700 text-white py-2 px-4 rounded'>
+          <button className='bg-orange-700 text-white py-2 px-4 rounded' onClick={()=>{setDetailForm(true)}}>
             Add Course
           </button>
         </div>
       </div>
-      <table className='w-full bg-white rounded shadow'>
+      <table className='w-full bg-white rounded shadow text-black'>
         <thead className='bg-orange-300'>
           <tr>
             <th className='p-2'>ID</th>
@@ -109,6 +111,7 @@ const ListAndRemoveCourseAdmin: React.FC = () => {
         onClose={() => setShowModal(false)}
         onConfirm={confirmDelete}
       />
+      <AddNewCourse openForm={detailForm} setOpenForm={setDetailForm} />
     </div>
   );
 };

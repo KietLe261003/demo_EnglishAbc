@@ -1,6 +1,6 @@
 import React from 'react';
 import { FiX } from 'react-icons/fi';
-import Button from '../../../Components/Button/Button';
+import Button from '../../../../Components/Button/Button';
 
 interface ConfirmProps {
   show: boolean;
