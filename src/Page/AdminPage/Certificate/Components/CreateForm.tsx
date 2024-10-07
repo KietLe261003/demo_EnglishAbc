@@ -43,7 +43,7 @@ const CreateForm:React.FC<CreateFormProps> = ({openForm,setOpenForm,content="ADD
   }, [certificateChoose]);
   return (
     <>
-      {openForm == true && (
+      {openForm  && (
         <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50'>
           <div className='bg-white max-h-full rounded-3xl min-w-[800px] shadow-md lg:shadow-lg p-6 sm:p-10 relative'>
             <button
