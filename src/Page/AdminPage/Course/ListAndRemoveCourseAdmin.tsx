@@ -39,7 +39,7 @@ const courses: Course[] = [
 ];
 
 const ListAndRemoveCourseAdmin: React.FC = () => {
-  const [detailForm,setDetailForm]=useState<boolean>(false);
+  const [detailForm, setDetailForm] = useState<boolean>(false);
   const [showModal, setShowModal] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
 
@@ -62,7 +62,12 @@ const ListAndRemoveCourseAdmin: React.FC = () => {
             Status
             <FaAngleDown className='ml-2' />
           </button>
-          <button className='bg-orange-700 text-white py-2 px-4 rounded' onClick={()=>{setDetailForm(true)}}>
+          <button
+            className='bg-orange-700 text-white py-2 px-4 rounded'
+            onClick={() => {
+              setDetailForm(true);
+            }}
+          >
             Add Course
           </button>
         </div>
@@ -81,10 +86,10 @@ const ListAndRemoveCourseAdmin: React.FC = () => {
           {courses.map((course, index) => (
             <tr
               key={index}
-              className={clsx('text-center', {
-                'bg-gray-500': index % 2 === 0,
-                'bg-white': index % 2 !== 0,
-              })}
+              className={clsx(
+                'text-center',
+                index % 2 === 0 ? 'bg-gray-500' : 'bg-white',
+              )}
             >
               <td className='p-2'>{course.id}</td>
               <td className='p-2'>{course.name}</td>
