@@ -1,25 +1,31 @@
-import { useState } from "react";
-import CardTitleComponent from "./Components/CardTitleComponent";
+import {  useState } from "react";
 import { IconWindowClose } from "../../../Common/Icon/Icon";
+import CardTitleComponent from "../CardTitleComponent";
+import { useAppDispatch, useAppSelector } from "../../../Hooks/Store";
+import { setCloseModal, setOpenModal } from "../../../Redux/Slice/HomeSlice";
 
-const LoginForm = () => {
+const LoginForm:React.FC = () => {
+  const {openModal}=useAppSelector(state=>state.counter);
+  const dispath = useAppDispatch();
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-  const [isFormVisible, setIsFormVisible] = useState(true);
-
-  const closeForm = () => {
-    setIsFormVisible(false);
+  const closeFormModal = () => {
+    dispath(setCloseModal());
   };
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
   };
+  const openRegisterForm = ()=>{
+    dispath(setOpenModal(2));
+    console.log(openModal);
+  } 
   return (
     <>
-      {isFormVisible && (
+      {openModal==1 && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white max-h-full rounded-3xl shadow-md lg:shadow-lg p-6 sm:p-10 relative">
             <button
               className="absolute top-3 right-4 text-slate-600 text-xl hover:text-gray-500 focus:outline-none"
-              onClick={closeForm}
+              onClick={closeFormModal}
             >
               <IconWindowClose />
             </button>
@@ -27,8 +33,7 @@ const LoginForm = () => {
             <div className="grid place-items-center mx-2 my-20 sm:my-auto">
               {/* Auth Card */}
               <div>
-                <CardTitleComponent />
-
+                <CardTitleComponent content="Good Morning!" description="Let’s learn English with G-easy every day"/>
                 <form className="mt-10" method="POST">
                   {/* Email Input */}
                   <label
@@ -49,7 +54,6 @@ const LoginForm = () => {
                 "
                     required
                   />
-
                   {/* Password Input */}
                   <label
                     htmlFor="password"
@@ -116,12 +120,13 @@ const LoginForm = () => {
                   {/* Auth Button */}
                   <div className="flex justify-end">
                     <button
-                      type="submit"
+                      type="button"
                       className="
                           min-w-[110px] min-h-[26px] py-2 mt-3 mx-1 bg-[#ECEBE9] rounded-3xl
                           font-bold text-[#4F4B45] text-sm
                           focus:outline-none hover:bg-[#bdbcba] hover:shadow-none 
                       "
+                      onClick={openRegisterForm}
                     >
                       Đăng ký
                     </button>

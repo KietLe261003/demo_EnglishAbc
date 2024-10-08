@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import LessonCard from "../CardItem/LessonCard";
+import { useNavigate } from "react-router-dom";
 interface ListDocumentProps {
     checkAll: boolean,
     listData: ListDocumentObject[]
@@ -19,6 +20,10 @@ const ListDocument:React.FC<ListDocumentProps>=({checkAll,listData})=> {
         [listData] 
       );
     const [listDocument,setListDocument]=useState(listDocumentTmp);
+    const navigate=useNavigate();
+    const clickDocumentFreePage=()=>{
+        navigate("/document/free/10");
+    }
     useEffect(()=>{
         if (!checkAll) {
             setListDocument(listDocumentTmp.filter((item) => item.percent !== undefined));
@@ -26,24 +31,23 @@ const ListDocument:React.FC<ListDocumentProps>=({checkAll,listData})=> {
             setListDocument(listDocumentTmp);
           }
     },[checkAll,listDocumentTmp])
-   
+    
     return ( 
         <div className=" grid grid-cols-4 gap-y-6 gap-x-5 justify-items-center">
             {
                 listDocument.map((item,index)=>(
                     item.percent && item.type!=="exam"? 
-                    <LessonCard key={index} name={item.name} description={item.description} buttonContent={item.buttonContent} percent={item.percent}/>:
+                    <LessonCard key={index} name={item.name} description={item.description} buttonContent={item.buttonContent} percent={item.percent} clickDetail={clickDocumentFreePage}/>:
                     item.type==="course" ?
                     <LessonCard key={index} name={item.name} description={item.description} percent={item.percent} price={item.price} type={true}/>:
                     item.type==="documentpay" ?
                     <LessonCard key={index} name={item.name} description={item.description} percent={item.percent} price={item.price} type={false}/>:
                     item.type==="exam" ?
                     <LessonCard key={index} name={item.name} description={item.description} buttonContent={item.buttonContent} state={item.state}/>:
-                    <LessonCard key={index} name={item.name} description={item.description} buttonContent={item.buttonContent} percent={item.percent}/>
-                ))
-                
+                    <LessonCard key={index} name={item.name} description={item.description} buttonContent={item.buttonContent} percent={item.percent} clickDetail={clickDocumentFreePage}/>
+                ))       
             }
-        </div>
+        </div>  
      );
 }
 

@@ -24,7 +24,8 @@ export default {
           600: '#6D6D6D',
         },
         grey: {
-          100: '#f9f9f9',
+          100: "#f9f9f9",
+          200: "#f8f8f8"
         },
         backgroundsidebaradmin: '#FFF4E5',
         textsidebar: '#8C8C8C',

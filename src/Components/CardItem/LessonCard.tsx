@@ -9,6 +9,7 @@ interface LessonCardProps {
   border?: boolean;
   type?: boolean;
   percent?: number;
+  clickDetail?: ()=>void;
 }
 const LessonCard: React.FC<LessonCardProps> = ({
   name,
@@ -19,6 +20,7 @@ const LessonCard: React.FC<LessonCardProps> = ({
   border = false,
   type = true,
   percent,
+  clickDetail
 }) => {
   let classState =
     "absolute top-[110px] right-0 rounded-bl-full rounded-tl-full px-6 py-2 ";
@@ -92,7 +94,7 @@ const LessonCard: React.FC<LessonCardProps> = ({
             <div className="flex justify-between gap-2">
               {price && (
                 <>
-                  <button className="px-2 py-1 text-[10px] rounded-[30px] bg-[#ECEBE9] space-x-4 flex items-center text-black">
+                  <button onClick={clickDetail} className="px-2 py-1 text-[10px] rounded-[30px] bg-[#ECEBE9] space-x-4 flex items-center text-black">
                     Xem chi tiết
                   </button>
                   <button className="px-2 py-1 text-[10px] rounded-[30px] bg-[#FB9400] space-x-4 flex items-center text-white">
@@ -116,7 +118,7 @@ const LessonCard: React.FC<LessonCardProps> = ({
                 </>
               )}
               {buttonContent && (
-                <button className="px-6 py-1 text-[10px] rounded-[30px] bg-[#FB9400] space-x-4 flex items-center text-white">
+                <button onClick={clickDetail} className="px-6 py-1 text-[10px] rounded-[30px] bg-[#FB9400] space-x-4 flex items-center text-white">
                   {buttonContent}
                 </button>
               )}
