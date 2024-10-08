@@ -5,20 +5,22 @@ import CardTitleComponent from '../CardTitleComponent';
 import { responseUser } from '../../../Type/User/ResponseUser';
 import { userServices } from '../../../Services/UserService';
 import Button from '../../Button/Button';
+import { useAppDispatch, useAppSelector } from '../../../Hooks/Store';
+import { setCloseModal, setOpenModal } from '../../../Redux/Slice/HomeSlice';
 interface RegisterFormProps{
-  openForm: number,
-  setOpenForm: React.Dispatch<React.SetStateAction<number>>,
   setInfoUser: React.Dispatch<React.SetStateAction<UserLogup|null>>
 }
-const RegisterForm:React.FC<RegisterFormProps> = ({openForm,setOpenForm,setInfoUser}) => {
+const RegisterForm:React.FC<RegisterFormProps> = ({setInfoUser}) => {
   const [fullName,setFullName]=useState<string>("");
   const [userName,setUserName]=useState<string>("");
   const [email,setEmail]=useState<string>("");
   const [phone,setPhone]=useState<string>("");
   const [password,setPassword]=useState<string>("");
   const [description,setDescription]=useState<string>("");
+  const {openModal}=useAppSelector(state=>state.counter);
+  const dispath=useAppDispatch();
   const closeForm = () => {
-    setOpenForm(0);
+    dispath(setCloseModal());
   };
   const Register = async ()=>{
     const newUser:UserLogup={
@@ -33,14 +35,17 @@ const RegisterForm:React.FC<RegisterFormProps> = ({openForm,setOpenForm,setInfoU
     if(responuser.code===0)
     {
       setInfoUser(newUser);
-      setOpenForm(3);
+      dispath(setOpenModal(3));
     }
     else 
       alert("Đăng ký thất bại");
   }
+  const login=()=>{
+    dispath(setOpenModal(1));
+  }
   return (
     <>
-      {openForm==2 && (
+      {openModal==2 && (
         <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50'>
           <div className='bg-white max-h-full rounded-3xl shadow-md lg:shadow-lg p-6 sm:p-10 relative'>
             <button
@@ -200,7 +205,7 @@ const RegisterForm:React.FC<RegisterFormProps> = ({openForm,setOpenForm,setInfoU
                   </div>
                 </div>
                 <div className='flex justify-end items-center mt-3 gap-3'>
-                  <Button variant='secondary'>Đăng nhập</Button>
+                  <Button variant='secondary' onClick={login}>Đăng nhập</Button>
                   <Button 
                     onClick={Register}  
                   >
