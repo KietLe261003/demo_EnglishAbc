@@ -1,17 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { IconWindowClose } from "../../../Common/Icon/Icon";
 import CardTitleComponent from "../CardTitleComponent";
 import InputOtp from "./Components/InputOtp";
 import Button from "../../Button/Button";
 import { UserLogup } from "../../../Type/User/UserLogup";
 import { userServices } from "../../../Services/UserService";
+import { useAppDispatch, useAppSelector } from "../../../Hooks/Store";
+import { setCloseModal } from "../../../Redux/Slice/HomeSlice";
 interface VerifyFormProps{
   infoUser: UserLogup | null
 }
 const VerifyForm:React.FC<VerifyFormProps> = ({infoUser}) => {
-  const [isFormVisible, setIsFormVisible] = useState(true);
+  const {openModal}=useAppSelector(state=>state.counter);
+  const dispath=useAppDispatch();
   const closeForm = () => {
-    setIsFormVisible(false);
+    dispath(setCloseModal());
   };
   const clickVerify = async ()=>{
     const response = await userServices.verifyUser(infoUser);
@@ -19,7 +22,7 @@ const VerifyForm:React.FC<VerifyFormProps> = ({infoUser}) => {
   }
   return (
     <>
-      {isFormVisible && (
+      {openModal==3 && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white max-h-full rounded-3xl shadow-md lg:shadow-lg p-6 sm:p-10 relative">
             <button

@@ -1,40 +1,49 @@
 import { useEffect, useState } from "react";
 import { IconWindowClose } from "../../../../Common/Icon/Icon";
 import InputTypeString from "../../../../Components/Input/InputTypeString";
-import InputDescription from "../../../../Components/Input/InputDescription";
-import { User } from "../../../../Type/User/User";
+import { Certificate } from "../../../../Type/Certificate/Certificate";
+import InputTypeSelect from "../../../../Components/Input/InputTypeSelect";
+import InputTypeDateTime from "../../../../Components/Input/InputTypeDateTime";
 
 
 interface CreateFormProps{
     openForm: boolean,
     setOpenForm: React.Dispatch<React.SetStateAction<boolean>>,
     content?: string,
-    userChoose?: User | null
+    certificateChoose?: Certificate | null
 }
-const CreateForm:React.FC<CreateFormProps> = ({openForm,setOpenForm,content="ADD NEWS ACCOUNT",userChoose}) => {
-  const [nameAccount, setNameAccount] = useState<string>(userChoose?.fullname || "");
-  const [email, setEmail] = useState<string>(userChoose?.email || "");
-  const [userName, setUserName] = useState<string>(userChoose?.username || "");
-  const [phoneNumber, setPhoneNumber] = useState<string>(userChoose?.phone || "");
-  const [password, setPassword] = useState<string>(userChoose?.password || "");
-  const [description,setDescription]=useState<string>(userChoose?.desciption || "");
-  
+const CreateForm:React.FC<CreateFormProps> = ({openForm,setOpenForm,content="ADD NEWS ACCOUNT",certificateChoose}) => {
+  const [nameAccount, setNameAccount] = useState<string>(certificateChoose?.nameUser || "");
+  const [date, setDate] = useState<string>(certificateChoose?.date || "");
+  const [gender, setGender] = useState<string>(certificateChoose?.gender || "");
+  const [TimeOfReceipt, setTimeofReceipt] = useState<string>(certificateChoose?.TimeOfReceipt || "");
+  const [TypeofCertification, setTypeofCertification] = useState<string>(certificateChoose?.TypeofCertification || "");
+  const genders=[
+    "Nam",
+    "Nữ",
+    "Khác"
+  ]
+  const typeCertificate=[
+    "Ielts",
+    "Toeic",
+    "Chứng chỉ tin học"
+  ]
+
   const closeFormModal = () => {
     setOpenForm(false);
   };
   useEffect(() => {
-    if (userChoose) {
-      setNameAccount(userChoose.fullname || "");
-      setEmail(userChoose.email || "");
-      setUserName(userChoose.username || "");
-      setPhoneNumber(userChoose.phone || "");
-      setPassword(userChoose.password || "");
-      setDescription(userChoose.desciption || "");
+    if (certificateChoose) {
+      setNameAccount(certificateChoose.nameUser || "");
+      setDate(certificateChoose.date || "");
+      setGender(certificateChoose.gender || "");
+      setTimeofReceipt(certificateChoose.TimeOfReceipt || "");
+      setTypeofCertification(certificateChoose.TypeofCertification || "");
     }
-  }, [userChoose]);
+  }, [certificateChoose]);
   return (
     <>
-      {openForm && (
+      {openForm  && (
         <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50'>
           <div className='bg-white max-h-full rounded-3xl min-w-[800px] shadow-md lg:shadow-lg p-6 sm:p-10 relative'>
             <button
@@ -55,37 +64,31 @@ const CreateForm:React.FC<CreateFormProps> = ({openForm,setOpenForm,content="ADD
                     setContent={setNameAccount}
                     placeholder='Nhập tên người dùng'
                   />
-                  <InputTypeString
-                    title='Email'
-                    content={email}
-                    setContent={setEmail}
-                    placeholder='Nhập email người dùng'
+                  <InputTypeSelect
+                    title="Giới tính"
+                    content={gender}
+                    setContent={setGender}
+                    titleOption={genders}
                   />
                   <div className='flex gap-2'>
-                    <InputTypeString
-                      title='Tên đăng nhập'
-                      content={userName}
-                      setContent={setUserName}
-                      placeholder='Nhập tên Đăng nhập'
+                    <InputTypeDateTime
+                      title='Ngày cấp chứng chỉ'
+                      content={date}
+                      setContent={setDate}
+                      placeholder='Nhập ngày cấp chứng chỉ'
                     />
-                    <InputTypeString
-                      title='Phone Number'
-                      content={phoneNumber}
-                      setContent={setPhoneNumber}
-                      placeholder='Nhập số điện thoại người dùng'
+                    <InputTypeDateTime
+                      title='Thời gian nhận'
+                      content={TimeOfReceipt}
+                      setContent={setTimeofReceipt}
+                      placeholder='Nhập thời gian nhận chứng chỉ'
                     />
                   </div>
-                  <InputTypeString
-                    title='Mật khẩu'
-                    content={password}
-                    setContent={setPassword}
-                    placeholder='Nhập mật khẩu'
-                  />
-                  <InputDescription
-                    title='Mô tả mong muốn nếu có'
-                    content={description}
-                    setContent={setDescription}
-                    placeholder='Mô tả về bản thân'
+                  <InputTypeSelect
+                    title="Loại chứng chỉ"
+                    content={TypeofCertification}
+                    setContent={setTypeofCertification}
+                    titleOption={typeCertificate}
                   />
                   <div className='flex justify-end'>
                     <button

@@ -1,17 +1,8 @@
-import { useEffect } from "react";
 import BannerLarge from "../../../Components/Banner/BannerLarge";
 import ContentSession from "../../../Components/Content/ContentSession";
 import ContentHome from "./Components/ContentHome";
 import ListIconContentHome from "./Components/ListIconContentHome";
-import { userServices } from "../../../Services/UserService";
 const HomePage = () => {
-  const getUser = async ()=>{
-    const listUser = await userServices.getAllUser();
-    console.log(listUser);
-  }
-  useEffect(()=>{
-    getUser();
-  },[])
   return (
     <div className="flex flex-col gap-3">
       <BannerLarge />

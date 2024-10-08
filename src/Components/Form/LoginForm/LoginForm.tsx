@@ -1,24 +1,26 @@
 import {  useState } from "react";
 import { IconWindowClose } from "../../../Common/Icon/Icon";
 import CardTitleComponent from "../CardTitleComponent";
-interface LoginFormProps{
-  openForm?: number,
-  setOpenForm: React.Dispatch<React.SetStateAction<number>>
-}
-const LoginForm:React.FC<LoginFormProps> = ({openForm,setOpenForm}) => {
+import { useAppDispatch, useAppSelector } from "../../../Hooks/Store";
+import { setCloseModal, setOpenModal } from "../../../Redux/Slice/HomeSlice";
+
+const LoginForm:React.FC = () => {
+  const {openModal}=useAppSelector(state=>state.counter);
+  const dispath = useAppDispatch();
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const closeFormModal = () => {
-    setOpenForm(0);
+    dispath(setCloseModal());
   };
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
   };
   const openRegisterForm = ()=>{
-    setOpenForm(2);
+    dispath(setOpenModal(2));
+    console.log(openModal);
   } 
   return (
     <>
-      {openForm==1 && (
+      {openModal==1 && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white max-h-full rounded-3xl shadow-md lg:shadow-lg p-6 sm:p-10 relative">
             <button

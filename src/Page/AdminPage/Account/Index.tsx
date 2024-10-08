@@ -16,7 +16,7 @@ function ManagementAccount() {
           fullname: "John wick",
           username: "John",
           email: "John@gmail.com",
-          password: "20/03/2003",
+          password: "12345678",
           role: "Active",
         };
         return Array.from({ length: 10 }, () => ({ ...defaultItem }));

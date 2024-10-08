@@ -2,36 +2,36 @@ import { useEffect, useState } from "react";
 import { IconWindowClose } from "../../../../Common/Icon/Icon";
 import InputTypeString from "../../../../Components/Input/InputTypeString";
 import InputDescription from "../../../../Components/Input/InputDescription";
-import { User } from "../../../../Type/User/User";
+import { Teacher } from "../../../../Type/Teacher/Teacher";
 
 
-interface CreateFormProps{
+interface CreateTeacherFormProps{
     openForm: boolean,
     setOpenForm: React.Dispatch<React.SetStateAction<boolean>>,
     content?: string,
-    userChoose?: User | null
+    teacherChoose?: Teacher | null
 }
-const CreateForm:React.FC<CreateFormProps> = ({openForm,setOpenForm,content="ADD NEWS ACCOUNT",userChoose}) => {
-  const [nameAccount, setNameAccount] = useState<string>(userChoose?.fullname || "");
-  const [email, setEmail] = useState<string>(userChoose?.email || "");
-  const [userName, setUserName] = useState<string>(userChoose?.username || "");
-  const [phoneNumber, setPhoneNumber] = useState<string>(userChoose?.phone || "");
-  const [password, setPassword] = useState<string>(userChoose?.password || "");
-  const [description,setDescription]=useState<string>(userChoose?.desciption || "");
+const CreateTeacherForm:React.FC<CreateTeacherFormProps> = ({openForm,setOpenForm,content="ADD NEWS ACCOUNT",teacherChoose}) => {
+  const [nameAccount, setNameAccount] = useState<string>(teacherChoose?.fullname || "");
+  const [email, setEmail] = useState<string>(teacherChoose?.email || "");
+  const [userName, setUserName] = useState<string>(teacherChoose?.username || "");
+  const [phoneNumber, setPhoneNumber] = useState<string>(teacherChoose?.phone || "");
+  const [password, setPassword] = useState<string>(teacherChoose?.password || "");
+  const [description,setDescription]=useState<string>(teacherChoose?.desciption || "");
   
   const closeFormModal = () => {
     setOpenForm(false);
   };
   useEffect(() => {
-    if (userChoose) {
-      setNameAccount(userChoose.fullname || "");
-      setEmail(userChoose.email || "");
-      setUserName(userChoose.username || "");
-      setPhoneNumber(userChoose.phone || "");
-      setPassword(userChoose.password || "");
-      setDescription(userChoose.desciption || "");
+    if (teacherChoose) {
+      setNameAccount(teacherChoose.fullname || "");
+      setEmail(teacherChoose.email || "");
+      setUserName(teacherChoose.username || "");
+      setPhoneNumber(teacherChoose.phone || "");
+      setPassword(teacherChoose.password || "");
+      setDescription(teacherChoose.desciption || "");
     }
-  }, [userChoose]);
+  }, [teacherChoose]);
   return (
     <>
       {openForm && (
@@ -120,4 +120,4 @@ const CreateForm:React.FC<CreateFormProps> = ({openForm,setOpenForm,content="ADD
   );
 };
 
-export default CreateForm;
+export default CreateTeacherForm;
