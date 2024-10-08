@@ -9,6 +9,7 @@ export enum RouterLink {
     Setting="/setting",
     Chat="/chat",
     DetailCourseOffline="/course/offline/:id",
+    DetailDocumentFreePage="/document/free/:id",
 }
 export enum RouterLinkAdmin {
     Home="",
