@@ -67,11 +67,7 @@ const ListProduct = () => {
 
       <div className='ml-4'>
         <div className='relative'>
-          <div
-            className={`w-full max-w-[600px] h-auto rounded-xl ${
-              selectedCard ? 'bg-black' : 'bg-white'
-            }`}
-          >
+          <div>
             <video
               className={`w-full h-auto object-cover rounded-xl ${
                 selectedCard ? 'opacity-45 pointer-events-none' : ''
@@ -81,9 +77,8 @@ const ListProduct = () => {
               <source src={video_test} type='video/mp4' />
             </video>
           </div>
-
           {selectedCard && (
-            <div className='absolute inset-0 flex items-center justify-center'>
+            <div className='absolute top-1/2 left-1/2 transform -translate-x-[50%] -translate-y-[50%] flex items-center justify-center'>
               <img
                 src={cart}
                 alt='Cart Icon'
