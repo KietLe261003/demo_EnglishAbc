@@ -1,10 +1,14 @@
 export interface Document{
-    id: string,
-    nameDocument: string,
+    docId: string,
+    course: string,
+    creator: number,
+    name: string,
     description: string,
-    imagess: string,
+    url: string,
+    images: string,
+    type: string,
     status: boolean,
-    price?: number,
     isFree: boolean,
-    content?: string
+    createdAt: string,
+    updateAt: string,
 }
