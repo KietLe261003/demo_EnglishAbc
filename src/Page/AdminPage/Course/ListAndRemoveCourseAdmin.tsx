@@ -1,122 +1,83 @@
-import React, { useState } from 'react';
-import Confirm from './Components/Confirm';
-import { FaAngleDown, FaRegEdit, FaRegTrashAlt } from 'react-icons/fa';
-import clsx from 'clsx';
+import React, { useEffect, useState } from 'react';
+import AddStatusAdmin from '../../../Components/Button/AddStatusAdmin';
+import TableAdmin from '../../../Components/Table/TableAdmin';
+import RemoveForm from '../../../Components/Form/RemoveForm';
 import AddNewCourse from './Components/AddNewCourse';
-
-interface Course {
-  id: string;
-  name: string;
-  date: string;
-  status: string;
-}
-const courses: Course[] = [
-  {
-    id: '#18933',
-    name: 'Grammar explanation',
-    date: '20/03/2003',
-    status: 'Active',
-  },
-  {
-    id: '#18933',
-    name: 'Grammar explanation',
-    date: '20/03/2003',
-    status: 'Active',
-  },
-  {
-    id: '#18933',
-    name: 'Grammar explanation',
-    date: '20/03/2003',
-    status: 'Active',
-  },
-  {
-    id: '#18933',
-    name: 'Grammar explanation',
-    date: '20/03/2003',
-    status: 'Active',
-  },
-  // Repeat the data as needed
-];
+import { Course, courseResponse } from '../../../Type/Course/Course';
+import { courseService } from '../../../Services/CourseService';
 
 const ListAndRemoveCourseAdmin: React.FC = () => {
   const [detailForm, setDetailForm] = useState<boolean>(false);
-  const [showModal, setShowModal] = useState(false);
-  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
-
-  const handleDelete = (course: Course) => {
-    setSelectedCourse(course);
-    setShowModal(true);
+  const [removeForm, setRemoveForm] = useState<boolean>(false);
+  const [courseChoose, setCourseChoose] = useState<Course | null>(null);
+  const [courses,setCourses]=useState<Course [] | null>(null);
+  // const courseItem: Course= {
+  //   teacher: 1,
+  //   creator: 1,
+  //   courseId: 1,
+  //   name: 'Khóa học Tiếng Anh Cơ Bản 2',
+  //   description: 'Khóa học dành cho người mới bắt đầu 2',
+  //   image: 'course_image2.png',
+  //   type: "IELTS",
+  //   status: true,
+  //   fee: 150,
+  //   quantitySession: 20,
+  //   startDatetime: '2024-09-15T10:00:00Z',
+  //   endDatetime: '2024-09-30T10:00:00Z',
+  //   createdAt: '2024-09-14T10:00:00Z',
+  //   updatedAt: '2024-09-14T10:00:00Z',
+  // };
+  // const courses = Array.from({ length: 10 }, () => ({ ...courseItem }));
+  const column = [
+    'courseId',
+    'name',
+    'status',
+    'fee',
+    'quantitySession',
+    'Action',
+  ];
+  const status = ['Status', 'Miễn Phí', 'Học phí', 'Số lượng'];
+  const removeDocument = () => {
+    if (courseChoose) {
+      console.log(courseChoose);
+    }
   };
+  const getAllCourse = async ()=>{
+    const course:courseResponse=await courseService.getAllCourse();
+    setCourses(course.content);
 
-  const confirmDelete = () => {
-    console.log('Deleted:', selectedCourse);
-    setShowModal(false);
-  };
-
+  }
+  useEffect(()=>{
+    getAllCourse();
+  },[])
   return (
-    <div className='p-4'>
-      <div className='flex justify-between'>
-        <h1 className='text-xl font-bold mb-4'>Course</h1>
-        <div className='flex justify-end items-center mb-4 gap-6'>
-          <button className='bg-orange-700 text-white py-2 px-4 rounded flex justify-start items-center'>
-            Status
-            <FaAngleDown className='ml-2' />
-          </button>
-          <button
-            className='bg-orange-700 text-white py-2 px-4 rounded'
-            onClick={() => {
-              setDetailForm(true);
-            }}
-          >
-            Add Course
-          </button>
-        </div>
-      </div>
-      <table className='w-full bg-white rounded shadow text-black'>
-        <thead className='bg-orange-300'>
-          <tr>
-            <th className='p-2'>ID</th>
-            <th className='p-2'>Name</th>
-            <th className='p-2'>Date</th>
-            <th className='p-2'>Status</th>
-            <th className='p-2'>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {courses.map((course, index) => (
-            <tr
-              key={index}
-              className={clsx(
-                'text-center',
-                index % 2 === 0 ? 'bg-gray-500' : 'bg-white',
-              )}
-            >
-              <td className='p-2'>{course.id}</td>
-              <td className='p-2'>{course.name}</td>
-              <td className='p-2'>{course.date}</td>
-              <td className='p-2'>{course.status}</td>
-              <td className='p-2'>
-                <button className='text-blue-500 mx-2'>
-                  <FaRegEdit />
-                </button>
-                <button
-                  className='text-red-500 mx-2'
-                  onClick={() => handleDelete(course)}
-                >
-                  <FaRegTrashAlt />
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      {/* Sử dụng component Confirm */}
-      <Confirm
-        show={showModal}
-        onClose={() => setShowModal(false)}
-        onConfirm={confirmDelete}
+    <div>
+      <AddStatusAdmin
+        contentAdd='Add Course'
+        contentStatus={status}
+        setOpenForm={setDetailForm}
       />
-      <AddNewCourse openForm={detailForm} setOpenForm={setDetailForm} />
+      {
+        courses &&
+        <TableAdmin
+          data={courses}
+          column={column}
+          setOpenFormDetail={setDetailForm}
+          setOpenFormRemove={setRemoveForm}
+          setItemChoose={setCourseChoose}
+        />
+      }
+      <RemoveForm
+        openForm={removeForm}
+        setOpenForm={setRemoveForm}
+        clickRemove={removeDocument}
+      />
+      <AddNewCourse
+        openForm={detailForm}
+        setOpenForm={setDetailForm}
+        content='Add new document'
+        courseChoose={courseChoose}
+      />
     </div>
   );
 };

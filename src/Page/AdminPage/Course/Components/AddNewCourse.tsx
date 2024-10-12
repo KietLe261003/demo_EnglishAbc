@@ -5,7 +5,7 @@ interface CreateFormProps {
   openForm: boolean;
   setOpenForm: React.Dispatch<React.SetStateAction<boolean>>;
   content?: string;
-  certificateChoose?: Course | null;
+  courseChoose?: Course | null;
 }
 const AddNewCourse: React.FC<CreateFormProps> = ({ openForm, setOpenForm }) => {
   const handleClick = () => {
