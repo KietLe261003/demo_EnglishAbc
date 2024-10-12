@@ -1,12 +1,16 @@
 interface Teacher{
   userId: number
 }
+export enum TypeCourse{
+  IELTS='IELTS',
+  TOEIC="TOEIC"
+}
 export interface CreateCourse {
   teacher: Teacher;
   name: string;
   description: string;
   image: string;
-  type: 'ILETS' | 'TOEIC';
+  type: TypeCourse;
   status: boolean;
   fee: number;
   quantitySession: number;

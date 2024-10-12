@@ -15,24 +15,25 @@ interface CreateFormDocumentProps{
     documentChoose?: Document | null
 }
 const CreateFormDocument:React.FC<CreateFormDocumentProps> = ({openForm,setOpenForm,content="ADD NEWS ACCOUNT",documentChoose}) => {
-  const [nameDocument, setNameDocument] = useState<string>(documentChoose?.nameDocument|| "");
+  const [nameDocument, setNameDocument] = useState<string>(documentChoose?.name|| "");
   const [contentDocument, setContentDocument] = useState<string>(documentChoose?.content || "");
   const [description,setDescription]=useState<string>(documentChoose?.description || "");
   const [status,setStatus]=useState<boolean>(documentChoose?.status || true);
-  const [image,setImage]=useState<string>(documentChoose?.imagess || "");
+  const [image,setImage]=useState<string>(documentChoose?.images || "");
   const [price,setPrice]=useState<number>(documentChoose?.price || 0);
   const [isFree,setIsFree]=useState<boolean>(documentChoose?.isFree || true);
 
   
   const closeFormModal = () => {
+    console.log(price);
     setOpenForm(false);
   };
   useEffect(() => {
     if (documentChoose) {
-      setNameDocument(documentChoose.nameDocument || "");
+      setNameDocument(documentChoose.name || "");
       setDescription(documentChoose.description || "");
-      setContentDocument(documentChoose?.content || "");
-      setImage(documentChoose?.imagess || "");
+      setContentDocument(documentChoose?.description || "");
+      setImage(documentChoose?.images || "");
       setPrice(documentChoose?.price || 0);
       setIsFree(documentChoose?.isFree || true);
       setStatus(documentChoose?.status || true);
@@ -77,7 +78,6 @@ const CreateFormDocument:React.FC<CreateFormDocumentProps> = ({openForm,setOpenF
                     !isFree &&
                     <InputTypeNumber
                       title='Giá tiền'
-                      content={price}
                       setContent={setPrice}
                       placeholder='Nhập giá tiền của tài liệu'
                     />

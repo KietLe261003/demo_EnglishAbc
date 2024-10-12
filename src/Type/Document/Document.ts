@@ -1,6 +1,7 @@
 export interface Document{
     docId: string,
     course: string,
+    content?: string,
     creator: number,
     name: string,
     description: string,
@@ -11,4 +12,5 @@ export interface Document{
     isFree: boolean,
     createdAt: string,
     updateAt: string,
+    price?: number
 }
