@@ -1,33 +1,36 @@
+import React from 'react';
+
 interface AddStatusAdminProps {
   contentAdd: string;
   contentStatus: string[];
-  setOpenForm: React.Dispatch<React.SetStateAction<boolean>>,
+  setOpenForm: React.Dispatch<React.SetStateAction<boolean>>;
 }
+
 const AddStatusAdmin: React.FC<AddStatusAdminProps> = ({
   contentAdd,
   contentStatus,
   setOpenForm
 }) => {
   const toggleCreateForm = () => {
-    setOpenForm(true)
+    setOpenForm(true);
   };
+
   return (
-    <div className='flex justify-end mx-auto'>
+    <div className='flex flex-col sm:flex-row justify-end mx-auto sm:space-x-2'>
       <select
-        className='m-2 middle none center rounded-lg text-[24px] text-white bg-orange-700 py-3 px-5 font-sans text-xs font-bold shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
+        className='w-32 sm:w-48 md:w-36 lg:w-32 m-2 rounded-lg text-white bg-orange-700 py-2 px-3 font-bold shadow-md transition-all hover:shadow-lg focus:opacity-85 active:opacity-85 disabled:opacity-50'
         data-ripple-light='false'
       >
-        {contentStatus.map((item, index) => {
-          return (
-            <option className=' bg-white text-black' key={index}>
-              {item}
-            </option>
-          );
-        })}
+        {contentStatus.map((item, index) => (
+          <option className='bg-white text-black' key={index}>
+            {item}
+          </option>
+        ))}
       </select>
       <button
         onClick={toggleCreateForm}
-        className='m-2 middle none center rounded-lg text-[24px] text-white bg-orange-700 py-3 px-6 font-sans text-xs font-bold shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none'
+        className='w-32 sm:w-48 md:w-36 lg:w-32 m-2 rounded-lg text-white bg-orange-700 py-2 px-3 
+        font-bold text-sm shadow-md transition-all hover:shadow-lg focus:opacity-85 active:opacity-85 disabled:opacity-50'
         data-ripple-light='false'
       >
         {contentAdd}
