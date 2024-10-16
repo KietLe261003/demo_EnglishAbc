@@ -23,7 +23,7 @@ const BannerLarge = () => {
       <button className='absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 bg-opacity-50 hover:bg-opacity-75 rounded-full p-1 sm:p-2 focus:outline-none'>
         <IconArrowRight />
       </button>
-      <div className='absolute mx-auto bottom-0 rounded-[30px] lg:rounded-[60px] w-full bg-orange-700 h-1 sm:h-2'></div>
+      <div className=' absolute mx-auto bottom-0 rounded-[30px] lg:rounded-[60px] w-full bg-orange-700 h-1 sm:h-2'></div>
     </div>
   );
 };

@@ -31,7 +31,7 @@ function ListIconContentHome() {
   ];
 
   return (
-    <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mx-auto'>
+    <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mx-auto '>
       {listIcon.map((item, index) => (
         <div
           key={index}
@@ -40,7 +40,7 @@ function ListIconContentHome() {
           <span className='p-5 rounded-full h-[100px] w-[100px] flex items-center justify-center bg-slate-400 text-black'>
             {item.icon}
           </span>
-          <p className='text-base sm:text-lg font-normal text-slate-700 mt-4'>
+          <p className="text-base sm:text-lg font-normal text-slate-700 mt-4'">
             {item.content}
           </p>
         </div>
