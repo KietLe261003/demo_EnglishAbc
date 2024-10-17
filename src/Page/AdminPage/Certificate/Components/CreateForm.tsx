@@ -43,83 +43,83 @@ const CreateForm:React.FC<CreateFormProps> = ({openForm,setOpenForm,content="ADD
   }, [certificateChoose]);
   return (
     <>
-      {openForm  && (
-        <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50'>
-          <div className='bg-white max-h-full rounded-3xl min-w-[800px] shadow-md lg:shadow-lg p-6 sm:p-10 relative'>
-            <button
-              className='absolute top-3 right-4 text-slate-600 text-xl hover:text-gray-500 focus:outline-none'
-              onClick={closeFormModal}
-            >
-              <IconWindowClose />
-            </button>
-            <div className='grid place-items-center mx-2 my-20 sm:my-auto'>
-              <div className='w-full'>
-                <div className='flex justify-center text-black text-[30px] font-bold'>
-                  {content}
-                </div>
-                <form className='mt-10' method='POST'>
-                  <InputTypeString
-                    title='Full Name'
-                    content={nameAccount}
-                    setContent={setNameAccount}
-                    placeholder='Nhập tên người dùng'
-                  />
-                  <InputTypeSelect
-                    title="Giới tính"
-                    content={gender}
-                    setContent={setGender}
-                    titleOption={genders}
-                  />
-                  <div className='flex gap-2'>
-                    <InputTypeDateTime
-                      title='Ngày cấp chứng chỉ'
-                      content={date}
-                      setContent={setDate}
-                      placeholder='Nhập ngày cấp chứng chỉ'
-                    />
-                    <InputTypeDateTime
-                      title='Thời gian nhận'
-                      content={TimeOfReceipt}
-                      setContent={setTimeofReceipt}
-                      placeholder='Nhập thời gian nhận chứng chỉ'
-                    />
-                  </div>
-                  <InputTypeSelect
-                    title="Loại chứng chỉ"
-                    content={TypeofCertification}
-                    setContent={setTypeofCertification}
-                    titleOption={typeCertificate}
-                  />
-                  <div className='flex justify-end'>
-                    <button
-                      type='button'
-                      className='
-                          min-w-[110px] min-h-[26px] py-2 mt-3 mx-1 bg-[#ECEBE9] rounded-3xl
-                          font-bold text-[#4F4B45] text-sm
-                          focus:outline-none hover:bg-[#bdbcba] hover:shadow-none 
-                      '
-                    >
-                      Cancel
-                    </button>
-                    <button
-                      type='submit'
-                      className='
-                          min-w-[110px] min-h-[26px] py-2 mt-3 bg-[#FB9400] rounded-3xl
-                          font-bold text-white text-sm
-                          focus:outline-none
-                          hover:bg-[#E07B00] hover:shadow-none shadow-lg
-                          '
-                    >
-                      Add
-                    </button>
-                  </div>
-                </form>
+    {openForm && (
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+       <div className="bg-white w-full max-w-[70%] sm:max-w-[600px] lg:max-w-[800px] rounded-3xl shadow-md lg:shadow-lg p-6 sm:p-10 relative">
+          <button
+            className="absolute top-3 right-4 text-slate-600 text-xl hover:text-gray-500 focus:outline-none"
+            onClick={closeFormModal}
+          >
+            <IconWindowClose />
+          </button>
+          <div className="grid place-items-center mx-2 my-5 sm:my-auto">
+            <div className="w-full">
+              <div className="flex justify-center text-black text-[24px] sm:text-[30px] font-bold">
+                {content}
               </div>
+              <form className="mt-6 sm:mt-10 space-y-4" method="POST">
+                <InputTypeString
+                  title="Full Name"
+                  content={nameAccount}
+                  setContent={setNameAccount}
+                  placeholder="Nhập tên người dùng"
+                />
+                <InputTypeSelect
+                  title="Giới tính"
+                  content={gender}
+                  setContent={setGender}
+                  titleOption={genders}
+                />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <InputTypeDateTime
+                    title="Ngày cấp chứng chỉ"
+                    content={date}
+                    setContent={setDate}
+                    placeholder="Nhập ngày cấp chứng chỉ"
+                  />
+                  <InputTypeDateTime
+                    title="Thời gian nhận"
+                    content={TimeOfReceipt}
+                    setContent={setTimeofReceipt}
+                    placeholder="Nhập thời gian nhận chứng chỉ"
+                  />
+                </div>
+                <InputTypeSelect
+                  title="Loại chứng chỉ"
+                  content={TypeofCertification}
+                  setContent={setTypeofCertification}
+                  titleOption={typeCertificate}
+                />
+                <div className="flex justify-end space-x-2">
+                  <button
+                    type="button"
+                    className="
+                      min-w-[90px] py-2 mt-3 bg-[#ECEBE9] rounded-3xl
+                      font-bold text-[#4F4B45] text-sm
+                      focus:outline-none hover:bg-[#bdbcba]
+                    "
+                    onClick={closeFormModal}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    className="
+                      min-w-[90px] py-2 mt-3 bg-[#FB9400] rounded-3xl
+                      font-bold text-white text-sm
+                      focus:outline-none hover:bg-[#E07B00]
+                    "
+                  >
+                    Add
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
-      )}
-    </>
+      </div>
+    )}
+  </>
   );
 };
 

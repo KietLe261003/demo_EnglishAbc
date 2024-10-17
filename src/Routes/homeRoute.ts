@@ -4,6 +4,7 @@ import Detaidocumentfreepage from "../Page/ClientPage/DocumentFreePage/Detaildoc
 import DocumentFreePage from "../Page/ClientPage/DocumentFreePage/DocumentFreePage";
 import DocumentPayPage from "../Page/ClientPage/DocumentPayPage/DocumentPayPage";
 import LessonNotPurchased from "../Page/ClientPage/DocumentPayPage/LessonNotPurchased";
+import ExamsDetail from "../Page/ClientPage/ExamsPage/ExamsDetail";
 import ExamsPage from "../Page/ClientPage/ExamsPage/ExamsPage";
 import HomePage from "../Page/ClientPage/HomePage/HomePage";
 import { RouterLink } from "../Util/RouterLink";
@@ -39,6 +40,10 @@ const homeRoute = [
     {
         path: RouterLink.DetailDocumentFreePage,
         element: Detaidocumentfreepage
+    },
+    {
+        path: RouterLink.DetailExamPage,
+        element: ExamsDetail
     }
 ]
 
