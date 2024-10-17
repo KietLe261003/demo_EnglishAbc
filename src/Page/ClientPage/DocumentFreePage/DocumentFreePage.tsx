@@ -73,7 +73,7 @@ function DocumentFreePage() {
       <BannerMedium
         title="Tài liệu miễn phí"
         description="Bộ tài liệu miễn phí"
-      />
+      ></BannerMedium>
       <div className="min-h-[45px]"></div>
       <Fillter
         checkAll={checkAll}
