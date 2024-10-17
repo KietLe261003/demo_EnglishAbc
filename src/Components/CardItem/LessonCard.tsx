@@ -23,7 +23,7 @@ const LessonCard: React.FC<LessonCardProps> = ({
   clickDetail
 }) => {
   let classState =
-    "absolute top-[110px] right-0 rounded-bl-full rounded-tl-full px-6 py-2 ";
+    "absolute top-[110px] right-0 rounded-bl-full rounded-tl-full px-6 py-2 sm:top-[70px] md:top-[60px] md:py-0 xl:top-[110px] xl:py-2 ";
   switch (state) {
     case "Pass":
       classState += "bg-[#00A751]";
