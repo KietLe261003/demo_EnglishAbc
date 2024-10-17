@@ -42,7 +42,7 @@ const ListDocument:React.FC<ListDocumentProps>=({checkAll,listData})=> {
     },[checkAll,listDocumentTmp])
     
     return ( 
-        <div className=" grid grid-cols-4 gap-y-6 gap-x-5 justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-y-6 gap-x-5 justify-items-center">
             {
                 listDocument.map((item,index)=>(
                     item.percent && item.type!=="exam"? 
