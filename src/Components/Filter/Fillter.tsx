@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { IconFilter, IconSearch } from '../../Common/Icon/Icon';
 import Button from '../Button/Button';
 import Dropdown from '../Button/Dropdown';
+
 const filterType = [
   {
     key: 'Miễn phí',
@@ -12,6 +13,7 @@ const filterType = [
     value: 'Pay',
   },
 ];
+
 const filterFinal = [
   {
     key: '10%',
@@ -54,6 +56,7 @@ const filterFinal = [
     value: '100',
   },
 ];
+
 const filterTeacher = [
   {
     key: 'Công nghệ thông tin',
@@ -64,6 +67,7 @@ const filterTeacher = [
     value: 'english',
   },
 ];
+
 const filterStatus = [
   {
     key: 'Đầy đủ',
@@ -74,6 +78,7 @@ const filterStatus = [
     value: 'InProgress',
   },
 ];
+
 interface FillterProps {
   checkAll: boolean;
   setCheckAll: React.Dispatch<React.SetStateAction<boolean>>;
@@ -84,6 +89,7 @@ interface FillterProps {
   contentFilterAll?: string;
   contentFilterInProgess?: string;
 }
+
 const Fillter: React.FC<FillterProps> = ({
   checkAll,
   setCheckAll,
@@ -104,9 +110,10 @@ const Fillter: React.FC<FillterProps> = ({
   const tongleFilter = () => {
     setOpenFilter(!openFilter);
   };
+
   return (
-    <div>
-      <div className='flex gap-3 font-bold'>
+    <div className='p-4'>
+      <div className='flex flex-col md:flex-row lg:flex-col xl:flex-row gap-3 font-bold'>
         <Button
           variant={checkAll === true ? 'primary' : 'secondary'}
           onClick={clickCheckAll}
@@ -133,7 +140,7 @@ const Fillter: React.FC<FillterProps> = ({
         >
           <IconFilter width='1.75em' height='1.75em' />
         </button>
-        <div className='flex items-center flex-grow'>
+        <div className='flex items-center flex-grow mt-3 md:mt-0'>
           <label htmlFor='voice-search' className='sr-only'>
             Search
           </label>
@@ -144,7 +151,7 @@ const Fillter: React.FC<FillterProps> = ({
             <input
               type='text'
               id='voice-search'
-              className='bg-gray-300 text-[14px] font-medium border border-transparent focus:outline-none flex-grow border-gray-300 rounded-r-full  text-gray-900 text-sm pl-3 p-2.5'
+              className='bg-gray-300 text-[14px] font-medium border border-transparent focus:outline-none flex-grow border-gray-300 rounded-r-full text-gray-900 text-sm pl-3 p-2.5'
               placeholder='Tìm kiếm...'
             />
           </div>
@@ -154,7 +161,7 @@ const Fillter: React.FC<FillterProps> = ({
         className={`mt-[30px] ${openFilter === false && 'hidden'}`}
         id='disclosure-1'
       >
-        <div className='max-w-5xl flex gap-[40px]'>
+        <div className='max-w-5xl flex flex-col md:flex-row gap-4 w-full'>
           <Dropdown
             title='Loại tài liệu'
             data={filterType}

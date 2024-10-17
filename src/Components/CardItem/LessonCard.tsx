@@ -91,7 +91,7 @@ const LessonCard: React.FC<LessonCardProps> = ({
                 </span>
               )}
             </div>
-            <div className="flex justify-between gap-2">
+            <div className="flex justify-between gap-2 sm:flex-col md:flex-col xl:flex-row 2xl:flex-row">
               {price && (
                 <>
                   <button onClick={clickDetail} className="px-2 py-1 text-[10px] rounded-[30px] bg-[#ECEBE9] space-x-4 flex items-center text-black">

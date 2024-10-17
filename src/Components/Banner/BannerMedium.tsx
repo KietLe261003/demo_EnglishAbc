@@ -1,22 +1,23 @@
-import banner from "../../Assets/Image/Rectangle 162.png";
+import banner from '../../Assets/Image/Rectangle 162.png';
 
-const BannerMedium = ({  title = "Default Title", description = "Default Description" }) => {
-    return (
-      <div className="relative w-full mx-auto rounded-[36px] overflow-hidden">
-        <img
-          src={banner}
-          alt="Banner"
-          className="w-full h-full object-cover max-h-[266px]"
-        />
-        <div className="absolute top-[30%] left-[5%] transform -translate-x-[10%] -translate-y-[20%]  bg-opacity-50 p-8 rounded-3xl max-w-3xl text-white tracking-wider">
-          <h2 className="text-3xl sm:text-4xl font-bold">{title}</h2>
-          <p className="text-sm sm:text-base mt-5">
-            {description}
-          </p>
-        </div>
-        <div className=" absolute mx-auto bottom-0 rounded-[36px] w-full bg-orange-700 h-2"></div>
+const BannerMedium = ({
+  title = 'Default Title',
+  description = 'Default Description',
+}) => {
+  return (
+    <div className='relative w-full mx-auto rounded-[36px] overflow-hidden'>
+      <img
+        src={banner}
+        alt='Banner'
+        className='w-full h-auto object-cover max-h-[300px] sm:max-h-[350px] md:max-h-[400px] lg:max-h-[450px]'
+      />
+      <div className='absolute inset-0 flex flex-col justify-center items-start p-6 text-white'>
+        <h2 className='text-xl sm:text-2xl md:text-3xl font-bold'>{title}</h2>
+        <p className='text-xs sm:text-sm md:text-base mt-2'>{description}</p>
       </div>
-    );
-  };
-  
-  export default BannerMedium;
+      <div className='absolute bottom-0 w-full bg-orange-700 h-2'></div>
+    </div>
+  );
+};
+
+export default BannerMedium;
