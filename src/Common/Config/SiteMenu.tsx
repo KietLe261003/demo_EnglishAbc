@@ -1,4 +1,4 @@
-import { RouterLink } from '../../Util/RouterLink';
+import { RouterLink} from '../../Util/RouterLink';
 import { IconChat, IconSetting } from '../Icon/Icon';
 import {
   IconBook,
@@ -42,8 +42,8 @@ export const siteMenu = [
 ];
 export const additionalItems = [
   {
-    name: 'Chat',
-    href: RouterLink.Chat,
+    name: 'Admin',
+    href: "/admin",
     icon: <IconChat />,
   },
   {
